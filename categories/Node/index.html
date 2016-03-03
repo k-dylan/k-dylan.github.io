@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Category: Node | Dylan&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    <div class="header-conn outer">
+        <div class="logo">
+            <div class="photo">
+                <a href="http://k-dylan.github.io"><img src="/images/photo.jpg" alt="头像"></a>
+            </div>
+            <h1 class="sitetitle"><a href="/">Dylan&#39;s Blog</a></h1>
+            <h3 class="subtitle">每天进步一点点</h3>
+        </div>
+        <nav id="nav">
+            <ul>
+                 
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                   
+                <li>
+                    <form action="#" method="GET">
+                        <input type="text" name="q" id="search" autocomplete="off" placeholder="搜索">
+                    </form> 
+                </li>
+            </ul>
+           
+                     
+        </nav>
+    </div>
+    
+</header>
+            <div class="outer">
+                <section id="main">
+ 
+	<article class="article">
+    <header>
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/19/hexo-deploy-low-dir/">Hexo部署到Github上文件夹的大小写问题</a>
+    </h1>
+  
+
+        <div class="article-info">
+            <span class="article-time">
+            发表于
+                <time datetime="2016-02-19T15:59:23.000Z" itemprop="datePublished">2016-02-19</time>
+            </span>
+            <span class="article-author">
+                By:Dylan
+            </span>
+        </div>
+    </header>
+    <div class="article-content">
+
+
+       
+        <p>最近在倒腾使用<code>hexo</code>在github上搭建个博客，发现一个挺有意思的问题：</p>
+<p>在写文章的时候，有个分类名开始起名为：<code>http</code>，后来感觉小写不好看，就给改成了大写<code>HTTP</code>，提交到github上之后就发现出问题了，http分类页面变成404了！</p>
+<p>经过排查问题发现github上的目录名为<code>http</code>，而分类请求的目录名为<code>HTTP</code>，而Github Pages是区分大小写的，所以造成找不到文件出现404错误！</p>
+<p>通过检查hexo生成的<code>.deploy_git</code>文件夹内的文件名是大写的，而使用<code>hexo d</code>提交到github上之后的目录还是小写，这是因为git默认是忽略大小写的！</p>
+<h3 id="u89E3_u51B3_u65B9_u6CD5"><a href="#u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>删除<code>.deploy_git</code>目录</li>
+<li>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</li>
+<li>打开github查看，问题解决！</li>
+</ol>
+<blockquote>
+<p>可以使用下面语句设置git大小写敏感，防止下次出现这样的问题：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+        <p  class="readmore" >
+            <a href="/2016/02/19/hexo-deploy-low-dir/">Read More</a>
+        </p>
+        
+    </div>
+    <div class="article-footer">
+        <span class="categories">
+            
+                <span></span>
+               
+                    <a href="/categories/Node/">Node</a>
+                    
+        </span>
+        <span class="tags">
+        
+            <span></span>
+            
+                <a href="/tags/Hexo/">Hexo</a>
+            
+        </span>
+
+    </div>
+</article>
+ 
+	<article class="article">
+    <header>
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/17/express-ejs/">express中使用ejs</a>
+    </h1>
+  
+
+        <div class="article-info">
+            <span class="article-time">
+            发表于
+                <time datetime="2016-02-16T16:13:53.000Z" itemprop="datePublished">2016-02-17</time>
+            </span>
+            <span class="article-author">
+                By:Dylan
+            </span>
+        </div>
+    </header>
+    <div class="article-content">
+
+
+       
+        <h3 id="1_u3001_u4F7F_u7528express_u547D_u4EE4_u521D_u59CB_u5316_u9879_u76EE"><a href="#1_u3001_u4F7F_u7528express_u547D_u4EE4_u521D_u59CB_u5316_u9879_u76EE" class="headerlink" title="1、使用express命令初始化项目"></a>1、使用express命令初始化项目</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ express -e ejs [&#21518;&#38754;&#21487;&#20197;&#28155;&#21152;&#39033;&#30446;&#21517;&#31216;&#65292;&#28155;&#21152;&#30340;&#35805; &#20250;&#21019;&#24314;&#39033;&#30446;&#25991;&#20214;&#22841;&#65292;&#19981;&#28155;&#21152;&#23601;&#22312;&#24403;&#21069;&#25991;&#20214;&#22841;&#20869;]</span><br></pre></td></tr></table></figure>
+<h3 id="2_u3001_u542F_u7528ejs_u7684layout_u6A21_u677F"><a href="#2_u3001_u542F_u7528ejs_u7684layout_u6A21_u677F" class="headerlink" title="2、启用ejs的layout模板"></a>2、启用ejs的layout模板</h3><p>express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件</p>
+<h4 id="u5B89_u88C5express-partials"><a href="#u5B89_u88C5express-partials" class="headerlink" title="安装express-partials"></a>安装express-partials</h4><p>在package.json里面的dependencies中添加 <code>&quot;express-partials&quot; : &quot;*&quot;</code> 。然后再项目目录下运行<code>npm install</code></p>
+<h4 id="u5728_u9879_u76EE_u4E2D_u5F15_u7528express-partials"><a href="#u5728_u9879_u76EE_u4E2D_u5F15_u7528express-partials" class="headerlink" title="在项目中引用express-partials"></a>在项目中引用express-partials</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> partials = <span class="built_in">require</span>(<span class="string">'express-partials'</span>);</span><br><span class="line"><span class="comment">//在app.set('view engine', 'ejs'); 下面添加</span></span><br><span class="line">app.use(partials());</span><br></pre></td></tr></table></figure>
+        <p  class="readmore" >
+            <a href="/2016/02/17/express-ejs/">Read More</a>
+        </p>
+        
+    </div>
+    <div class="article-footer">
+        <span class="categories">
+            
+                <span></span>
+               
+                    <a href="/categories/Node/">Node</a>
+                    
+        </span>
+        <span class="tags">
+        
+            <span></span>
+            
+                <a href="/tags/Node/">Node</a>
+            
+        </span>
+
+    </div>
+</article>
+</section>
+                
+                    <aside id="sidebar">
+	<div class="categorieslist">
+		<h3 class="sidebar-title">分类</h3>
+		<ul class="sidebar-body">
+			
+				
+					<li><a href="/categories/HTTP/" title="HTTP">HTTP<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/categories/Node/" title="Node">Node<sup>2</sup></a></li>
+				
+			
+				
+					<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+				
+			
+		</ul>
+	</div>
+	<div class="tagslist">
+		<h3 class="sidebar-title">标签</h3>
+		<ul class="sidebar-body">
+			
+				
+					<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/Node/" title="Node">Node<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/url/" title="url">url<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/前端/" title="前端">前端<sup>1</sup></a></li>
+				
+			
+		</ul>
+	</div>
+</aside>
+                
+            </div>
+            
+<div id="footer">
+	<div class="outer">
+		<p class="copyright">
+			Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a>  © 2015 		<a href="/about" target="_blank" title="kdylan">Kdylan</a>	
+		
+
+	
+		
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257493528'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257493528%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		
+		</p>
+	</div>
+</div>
+
+
+
+        </div>
+        
+    </div>
+</body>
+</html>

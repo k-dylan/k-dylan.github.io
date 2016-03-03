@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tag: Hexo | Dylan&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    <div class="header-conn outer">
+        <div class="logo">
+            <div class="photo">
+                <a href="http://k-dylan.github.io"><img src="/images/photo.jpg" alt="头像"></a>
+            </div>
+            <h1 class="sitetitle"><a href="/">Dylan&#39;s Blog</a></h1>
+            <h3 class="subtitle">每天进步一点点</h3>
+        </div>
+        <nav id="nav">
+            <ul>
+                 
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                   
+                <li>
+                    <form action="#" method="GET">
+                        <input type="text" name="q" id="search" autocomplete="off" placeholder="搜索">
+                    </form> 
+                </li>
+            </ul>
+           
+                     
+        </nav>
+    </div>
+    
+</header>
+            <div class="outer">
+                <section id="main">
+ 
+	<article class="article">
+    <header>
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/19/hexo-deploy-low-dir/">Hexo部署到Github上文件夹的大小写问题</a>
+    </h1>
+  
+
+        <div class="article-info">
+            <span class="article-time">
+            发表于
+                <time datetime="2016-02-19T15:59:23.000Z" itemprop="datePublished">2016-02-19</time>
+            </span>
+            <span class="article-author">
+                By:Dylan
+            </span>
+        </div>
+    </header>
+    <div class="article-content">
+
+
+       
+        <p>最近在倒腾使用<code>hexo</code>在github上搭建个博客，发现一个挺有意思的问题：</p>
+<p>在写文章的时候，有个分类名开始起名为：<code>http</code>，后来感觉小写不好看，就给改成了大写<code>HTTP</code>，提交到github上之后就发现出问题了，http分类页面变成404了！</p>
+<p>经过排查问题发现github上的目录名为<code>http</code>，而分类请求的目录名为<code>HTTP</code>，而Github Pages是区分大小写的，所以造成找不到文件出现404错误！</p>
+<p>通过检查hexo生成的<code>.deploy_git</code>文件夹内的文件名是大写的，而使用<code>hexo d</code>提交到github上之后的目录还是小写，这是因为git默认是忽略大小写的！</p>
+<h3 id="u89E3_u51B3_u65B9_u6CD5"><a href="#u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>删除<code>.deploy_git</code>目录</li>
+<li>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</li>
+<li>打开github查看，问题解决！</li>
+</ol>
+<blockquote>
+<p>可以使用下面语句设置git大小写敏感，防止下次出现这样的问题：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+        <p  class="readmore" >
+            <a href="/2016/02/19/hexo-deploy-low-dir/">Read More</a>
+        </p>
+        
+    </div>
+    <div class="article-footer">
+        <span class="categories">
+            
+                <span></span>
+               
+                    <a href="/categories/Node/">Node</a>
+                    
+        </span>
+        <span class="tags">
+        
+            <span></span>
+            
+                <a href="/tags/Hexo/">Hexo</a>
+            
+        </span>
+
+    </div>
+</article>
+</section>
+                
+                    <aside id="sidebar">
+	<div class="categorieslist">
+		<h3 class="sidebar-title">分类</h3>
+		<ul class="sidebar-body">
+			
+				
+					<li><a href="/categories/HTTP/" title="HTTP">HTTP<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/categories/Node/" title="Node">Node<sup>2</sup></a></li>
+				
+			
+				
+					<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+				
+			
+		</ul>
+	</div>
+	<div class="tagslist">
+		<h3 class="sidebar-title">标签</h3>
+		<ul class="sidebar-body">
+			
+				
+					<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/Node/" title="Node">Node<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/url/" title="url">url<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/前端/" title="前端">前端<sup>1</sup></a></li>
+				
+			
+		</ul>
+	</div>
+</aside>
+                
+            </div>
+            
+<div id="footer">
+	<div class="outer">
+		<p class="copyright">
+			Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a>  © 2015 		<a href="/about" target="_blank" title="kdylan">Kdylan</a>	
+		
+
+	
+		
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257493528'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257493528%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		
+		</p>
+	</div>
+</div>
+
+
+
+        </div>
+        
+    </div>
+</body>
+</html>

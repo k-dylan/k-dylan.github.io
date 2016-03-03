@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Category: PHP | Dylan&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    <div class="header-conn outer">
+        <div class="logo">
+            <div class="photo">
+                <a href="http://k-dylan.github.io"><img src="/images/photo.jpg" alt="头像"></a>
+            </div>
+            <h1 class="sitetitle"><a href="/">Dylan&#39;s Blog</a></h1>
+            <h3 class="subtitle">每天进步一点点</h3>
+        </div>
+        <nav id="nav">
+            <ul>
+                 
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                   
+                <li>
+                    <form action="#" method="GET">
+                        <input type="text" name="q" id="search" autocomplete="off" placeholder="搜索">
+                    </form> 
+                </li>
+            </ul>
+           
+                     
+        </nav>
+    </div>
+    
+</header>
+            <div class="outer">
+                <section id="main">
+ 
+	<article class="article">
+    <header>
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/15/mac+apache+php/">Mac下Apache和php的配置</a>
+    </h1>
+  
+
+        <div class="article-info">
+            <span class="article-time">
+            发表于
+                <time datetime="2016-02-15T03:19:51.000Z" itemprop="datePublished">2016-02-15</time>
+            </span>
+            <span class="article-author">
+                By:Dylan
+            </span>
+        </div>
+    </header>
+    <div class="article-content">
+
+
+       
+        <blockquote>
+<p>osX系统是默认自带的有php和apache的 </p>
+</blockquote>
+<h2 id="1_u3001_u542F_u52A8Apache"><a href="#1_u3001_u542F_u52A8Apache" class="headerlink" title="1、启动Apache"></a>1、启动Apache</h2><p>打开终端：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开启apache命令：sudo apachectl start</span><br><span class="line">关闭apache命令：sudo apachectl stop</span><br><span class="line">重启apache命令：sudo apachectl restart</span><br></pre></td></tr></table></figure>
+<p>启用apache后，可以直接在浏览器访问<code>http://localhost</code>，出现“<code>It works！</code>”表示运行正常。</p>
+<ol>
+<li><p>用户级的根目录是：<code>~Sites</code>，也就是站点目录。在 OS X Mountain Lion 中，这个目录可能没有，所以你需要手动建立一个同名目录。建立方式很简单，直接在终端中运行：<code>sudo mkdir Sites</code></p>
+</li>
+<li><p>建立”站点”文件夹之后，检查下面这个文件夹下面是不是有”<code>你的用户名.conf</code>”这个文件。</p>
+</li>
+</ol>
+<p>如果没有，那么你需要创建一个，取名为“<code>dylan.conf</code>”，可以使用 vi 或者 nano 这两种编辑器之一来创建。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/apache2/users/haibor.conf</span><br></pre></td></tr></table></figure>
+        <p  class="readmore" >
+            <a href="/2016/02/15/mac+apache+php/">Read More</a>
+        </p>
+        
+    </div>
+    <div class="article-footer">
+        <span class="categories">
+            
+                <span></span>
+               
+                    <a href="/categories/PHP/">PHP</a>
+                    
+        </span>
+        <span class="tags">
+        
+            <span></span>
+            
+                <a href="/tags/Mac/">Mac</a>
+            
+                <a href="/tags/PHP/">PHP</a>
+            
+        </span>
+
+    </div>
+</article>
+</section>
+                
+                    <aside id="sidebar">
+	<div class="categorieslist">
+		<h3 class="sidebar-title">分类</h3>
+		<ul class="sidebar-body">
+			
+				
+					<li><a href="/categories/HTTP/" title="HTTP">HTTP<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/categories/Node/" title="Node">Node<sup>2</sup></a></li>
+				
+			
+				
+					<li><a href="/categories/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+				
+			
+		</ul>
+	</div>
+	<div class="tagslist">
+		<h3 class="sidebar-title">标签</h3>
+		<ul class="sidebar-body">
+			
+				
+					<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/Node/" title="Node">Node<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/PHP/" title="PHP">PHP<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/url/" title="url">url<sup>1</sup></a></li>
+				
+			
+				
+					<li><a href="/tags/前端/" title="前端">前端<sup>1</sup></a></li>
+				
+			
+		</ul>
+	</div>
+</aside>
+                
+            </div>
+            
+<div id="footer">
+	<div class="outer">
+		<p class="copyright">
+			Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a>  © 2015 		<a href="/about" target="_blank" title="kdylan">Kdylan</a>	
+		
+
+	
+		
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257493528'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257493528%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		
+		</p>
+	</div>
+</div>
+
+
+
+        </div>
+        
+    </div>
+</body>
+</html>
