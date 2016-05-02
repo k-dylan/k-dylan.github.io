@@ -452,7 +452,7 @@ ul {
   font-family: Monaco, Menlo, Consolas, Courier New, monospace;
   margin: 0;
   color: #555;
-  white-space: normal;
+  white-space: pre-wrap;
 }
 .highlight .code .string,
 .highlight .code .value,
