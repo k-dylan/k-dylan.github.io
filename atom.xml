@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Dylan&#39;s Blog</title>
+  <subtitle>每天进步一点点</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://k-dylan.github.io/"/>
+  <updated>2016-05-02T13:39:24.000Z</updated>
+  <id>http://k-dylan.github.io/</id>
+  
+  <author>
+    <name>Dylan</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js获取隐藏元素的实际宽和高</title>
+    <link href="http://k-dylan.github.io/2016/05/02/get-hidden-node-height/"/>
+    <id>http://k-dylan.github.io/2016/05/02/get-hidden-node-height/</id>
+    <published>2016-05-02T04:51:45.000Z</published>
+    <updated>2016-05-02T13:39:24.000Z</updated>
+    
+    <content type="html">&lt;p&gt;我们通常都是使用 &lt;code&gt;Element.offsetHeight&lt;/code&gt; 来获取一个节点的宽和高度的，在一般的使用中是没什么问题的。但是，如果节点的 &lt;code&gt;display&lt;/code&gt; 属性为 &lt;code&gt;none&lt;/code&gt;话，就获取不到实际的宽高了，获取到的数据就是0；&lt;br&gt;&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; src=&quot;http://jsfiddle.net/xyy7c7am/embedded/result,html,css,js/light&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;那如何才能获取到实际的宽高呢？&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;由于节点为 &lt;code&gt;display:none&lt;/code&gt;的情况下，浏览器是不渲染这个节点的，自然就获取不到节点的大小了，所以我们要想获取到这个节点的大小，首先就要让浏览器渲染这个节点，那么就要把 &lt;code&gt;display&lt;/code&gt; 设置为 &lt;code&gt;block&lt;/code&gt; ,获取到大小，再隐藏这个节点就行了。但是这样节点就显示隐藏，有时会造成浏览器闪屏，所以我们还需要用到另外一个属性 &lt;code&gt;visibility&lt;/code&gt;, &lt;code&gt;visibility&lt;/code&gt; 设置为 &lt;code&gt;hidden&lt;/code&gt; 时，浏览器可以获取节点的大小，却不显示这个节点。&lt;/p&gt;
+&lt;p&gt;不过还有一个问题，如果设置为 &lt;code&gt;visibility：hidden&lt;/code&gt; 的话，节点的位置是要空出来了，而且有可能会造成布局错乱。所以需要将节点从正常的文档流中脱离，即使用 &lt;code&gt;position:absolute&lt;/code&gt;;&lt;/p&gt;
+&lt;p&gt;所以具体实现如下：&lt;/p&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; src=&quot;http://jsfiddle.net/d95kks5k/embedded/result,html,css,js/light&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们通常都是使用 &lt;code&gt;Element.offsetHeight&lt;/code&gt; 来获取一个节点的宽和高度的，在一般的使用中是没什么问题的。但是，如果节点的 &lt;code&gt;display&lt;/code&gt; 属性为 &lt;code&gt;none&lt;/code&gt;话，就获取不到实际的宽高了，获取到的数据就是0；&lt;br&gt;&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; src=&quot;http://jsfiddle.net/xyy7c7am/embedded/result,html,css,js/light&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;那如何才能获取到实际的宽高呢？&lt;br&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://k-dylan.github.io/categories/javascript/"/>
+    
+    
+      <category term="javascript" scheme="http://k-dylan.github.io/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://k-dylan.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3中使用transition过渡动画高度自适应的问题</title>
+    <link href="http://k-dylan.github.io/2016/05/01/css-transition-auto/"/>
+    <id>http://k-dylan.github.io/2016/05/01/css-transition-auto/</id>
+    <published>2016-05-01T03:19:51.000Z</published>
+    <updated>2016-05-01T14:36:37.000Z</updated>
+    
+    <content type="html">&lt;p&gt;最近在做一个项目的时候，需要为一个列表添加个slideDown的动画，容器的高度是不确定的，如果用jquery实现的话很简单：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; src=&quot;http://jsfiddle.net/dhwfmbmx/embedded/result,html,css,js/light&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;而用CSS3实现的话，由于高度的不确定，而 &lt;code&gt;transtion&lt;/code&gt; 是需要具体的树枝，所以设置 &lt;code&gt;height:auto&lt;/code&gt; 是无法实现效果的，可以通过 &lt;code&gt;max-height&lt;/code&gt; 这个属性间接的实现这么个效果，css样式是这样的：&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;.bd&lt;/span&gt; &lt;span class=&quot;rules&quot;&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;none&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;max-height&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;overflow&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;hidden&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;transition&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt; all .&lt;span class=&quot;number&quot;&gt;6s&lt;/span&gt; ease-out&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;.show&lt;/span&gt; &lt;span class=&quot;rules&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;max-height&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt; &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;transition-timing-function&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt; ease-in&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;具体效果：&lt;br&gt;&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; src=&quot;http://jsfiddle.net/w1mw829k/embedded/result,html,css,js/light&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在做一个项目的时候，需要为一个列表添加个slideDown的动画，容器的高度是不确定的，如果用jquery实现的话很简单：&lt;br&gt;
+    
+    </summary>
+    
+      <category term="css" scheme="http://k-dylan.github.io/categories/css/"/>
+    
+    
+      <category term="css" scheme="http://k-dylan.github.io/tags/css/"/>
+    
+      <category term="前端" scheme="http://k-dylan.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo部署到Github上文件夹的大小写问题</title>
+    <link href="http://k-dylan.github.io/2016/02/19/hexo-deploy-low-dir/"/>
+    <id>http://k-dylan.github.io/2016/02/19/hexo-deploy-low-dir/</id>
+    <published>2016-02-19T15:59:23.000Z</published>
+    <updated>2016-02-19T16:21:00.000Z</updated>
+    
+    <content type="html">&lt;p&gt;最近在倒腾使用&lt;code&gt;hexo&lt;/code&gt;在github上搭建个博客，发现一个挺有意思的问题：&lt;/p&gt;
+&lt;p&gt;在写文章的时候，有个分类名开始起名为：&lt;code&gt;http&lt;/code&gt;，后来感觉小写不好看，就给改成了大写&lt;code&gt;HTTP&lt;/code&gt;，提交到github上之后就发现出问题了，http分类页面变成404了！&lt;/p&gt;
+&lt;p&gt;经过排查问题发现github上的目录名为&lt;code&gt;http&lt;/code&gt;，而分类请求的目录名为&lt;code&gt;HTTP&lt;/code&gt;，而Github Pages是区分大小写的，所以造成找不到文件出现404错误！&lt;/p&gt;
+&lt;p&gt;通过检查hexo生成的&lt;code&gt;.deploy_git&lt;/code&gt;文件夹内的文件名是大写的，而使用&lt;code&gt;hexo d&lt;/code&gt;提交到github上之后的目录还是小写，这是因为git默认是忽略大小写的！&lt;/p&gt;
+&lt;h3 id=&quot;u89E3_u51B3_u65B9_u6CD5&quot;&gt;&lt;a href=&quot;#u89E3_u51B3_u65B9_u6CD5&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;删除&lt;code&gt;.deploy_git&lt;/code&gt;目录&lt;/li&gt;
+&lt;li&gt;再次运行&lt;code&gt;hexo d&lt;/code&gt;提交，hexo会重置git仓库，并重新生成所有文件!&lt;/li&gt;
+&lt;li&gt;打开github查看，问题解决！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以使用下面语句设置git大小写敏感，防止下次出现这样的问题：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config core.ignorecase &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在倒腾使用&lt;code&gt;hexo&lt;/code&gt;在github上搭建个博客，发现一个挺有意思的问题：&lt;/p&gt;
+&lt;p&gt;在写文章的时候，有个分类名开始起名为：&lt;code&gt;http&lt;/code&gt;，后来感觉小写不好看，就给改成了大写&lt;code&gt;HTTP&lt;/code&gt;，提交到gith
+    
+    </summary>
+    
+      <category term="Node" scheme="http://k-dylan.github.io/categories/Node/"/>
+    
+    
+      <category term="Hexo" scheme="http://k-dylan.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>express中使用ejs</title>
+    <link href="http://k-dylan.github.io/2016/02/17/express-ejs/"/>
+    <id>http://k-dylan.github.io/2016/02/17/express-ejs/</id>
+    <published>2016-02-16T16:13:53.000Z</published>
+    <updated>2016-02-19T15:49:57.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;1_u3001_u4F7F_u7528express_u547D_u4EE4_u521D_u59CB_u5316_u9879_u76EE&quot;&gt;&lt;a href=&quot;#1_u3001_u4F7F_u7528express_u547D_u4EE4_u521D_u59CB_u5316_u9879_u76EE&quot; class=&quot;headerlink&quot; title=&quot;1、使用express命令初始化项目&quot;&gt;&lt;/a&gt;1、使用express命令初始化项目&lt;/h3&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ express -e ejs [&amp;#21518;&amp;#38754;&amp;#21487;&amp;#20197;&amp;#28155;&amp;#21152;&amp;#39033;&amp;#30446;&amp;#21517;&amp;#31216;&amp;#65292;&amp;#28155;&amp;#21152;&amp;#30340;&amp;#35805; &amp;#20250;&amp;#21019;&amp;#24314;&amp;#39033;&amp;#30446;&amp;#25991;&amp;#20214;&amp;#22841;&amp;#65292;&amp;#19981;&amp;#28155;&amp;#21152;&amp;#23601;&amp;#22312;&amp;#24403;&amp;#21069;&amp;#25991;&amp;#20214;&amp;#22841;&amp;#20869;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2_u3001_u542F_u7528ejs_u7684layout_u6A21_u677F&quot;&gt;&lt;a href=&quot;#2_u3001_u542F_u7528ejs_u7684layout_u6A21_u677F&quot; class=&quot;headerlink&quot; title=&quot;2、启用ejs的layout模板&quot;&gt;&lt;/a&gt;2、启用ejs的layout模板&lt;/h3&gt;&lt;p&gt;express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件&lt;/p&gt;
+&lt;h4 id=&quot;u5B89_u88C5express-partials&quot;&gt;&lt;a href=&quot;#u5B89_u88C5express-partials&quot; class=&quot;headerlink&quot; title=&quot;安装express-partials&quot;&gt;&lt;/a&gt;安装express-partials&lt;/h4&gt;&lt;p&gt;在package.json里面的dependencies中添加 &lt;code&gt;&amp;quot;express-partials&amp;quot; : &amp;quot;*&amp;quot;&lt;/code&gt; 。然后再项目目录下运行&lt;code&gt;npm install&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&quot;u5728_u9879_u76EE_u4E2D_u5F15_u7528express-partials&quot;&gt;&lt;a href=&quot;#u5728_u9879_u76EE_u4E2D_u5F15_u7528express-partials&quot; class=&quot;headerlink&quot; title=&quot;在项目中引用express-partials&quot;&gt;&lt;/a&gt;在项目中引用express-partials&lt;/h4&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; partials = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;express-partials&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//在app.set(&#39;view engine&#39;, &#39;ejs&#39;); 下面添加&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.use(partials());&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;3_u3001_u4F7F_u7528_u65B9_u6CD5&quot;&gt;&lt;a href=&quot;#3_u3001_u4F7F_u7528_u65B9_u6CD5&quot; class=&quot;headerlink&quot; title=&quot;3、使用方法&quot;&gt;&lt;/a&gt;3、使用方法&lt;/h3&gt;&lt;p&gt;在需要引用模板的地方调用 layout:’模板名称’&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;app.get(&lt;span class=&quot;string&quot;&gt;&#39;/reg&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;req, res&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    res.render(&lt;span class=&quot;string&quot;&gt;&#39;reg&#39;&lt;/span&gt;, &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        title: &lt;span class=&quot;string&quot;&gt;&#39;用户注册&#39;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        layout: &lt;span class=&quot;string&quot;&gt;&#39;template&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1_u3001_u4F7F_u7528express_u547D_u4EE4_u521D_u59CB_u5316_u9879_u76EE&quot;&gt;&lt;a href=&quot;#1_u3001_u4F7F_u7528express_u547D_u4EE4_u521D_u59CB_u5316_u9879_u76EE&quot; class=&quot;headerlink&quot; title=&quot;1、使用express命令初始化项目&quot;&gt;&lt;/a&gt;1、使用express命令初始化项目&lt;/h3&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ express -e ejs [&amp;#21518;&amp;#38754;&amp;#21487;&amp;#20197;&amp;#28155;&amp;#21152;&amp;#39033;&amp;#30446;&amp;#21517;&amp;#31216;&amp;#65292;&amp;#28155;&amp;#21152;&amp;#30340;&amp;#35805; &amp;#20250;&amp;#21019;&amp;#24314;&amp;#39033;&amp;#30446;&amp;#25991;&amp;#20214;&amp;#22841;&amp;#65292;&amp;#19981;&amp;#28155;&amp;#21152;&amp;#23601;&amp;#22312;&amp;#24403;&amp;#21069;&amp;#25991;&amp;#20214;&amp;#22841;&amp;#20869;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2_u3001_u542F_u7528ejs_u7684layout_u6A21_u677F&quot;&gt;&lt;a href=&quot;#2_u3001_u542F_u7528ejs_u7684layout_u6A21_u677F&quot; class=&quot;headerlink&quot; title=&quot;2、启用ejs的layout模板&quot;&gt;&lt;/a&gt;2、启用ejs的layout模板&lt;/h3&gt;&lt;p&gt;express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件&lt;/p&gt;
+&lt;h4 id=&quot;u5B89_u88C5express-partials&quot;&gt;&lt;a href=&quot;#u5B89_u88C5express-partials&quot; class=&quot;headerlink&quot; title=&quot;安装express-partials&quot;&gt;&lt;/a&gt;安装express-partials&lt;/h4&gt;&lt;p&gt;在package.json里面的dependencies中添加 &lt;code&gt;&amp;quot;express-partials&amp;quot; : &amp;quot;*&amp;quot;&lt;/code&gt; 。然后再项目目录下运行&lt;code&gt;npm install&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&quot;u5728_u9879_u76EE_u4E2D_u5F15_u7528express-partials&quot;&gt;&lt;a href=&quot;#u5728_u9879_u76EE_u4E2D_u5F15_u7528express-partials&quot; class=&quot;headerlink&quot; title=&quot;在项目中引用express-partials&quot;&gt;&lt;/a&gt;在项目中引用express-partials&lt;/h4&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; partials = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;express-partials&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//在app.set(&#39;view engine&#39;, &#39;ejs&#39;); 下面添加&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.use(partials());&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Node" scheme="http://k-dylan.github.io/categories/Node/"/>
+    
+    
+      <category term="Node" scheme="http://k-dylan.github.io/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac下Apache和php的配置</title>
+    <link href="http://k-dylan.github.io/2016/02/15/mac+apache+php/"/>
+    <id>http://k-dylan.github.io/2016/02/15/mac+apache+php/</id>
+    <published>2016-02-15T03:19:51.000Z</published>
+    <updated>2016-02-17T08:24:14.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;osX系统是默认自带的有php和apache的 &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1_u3001_u542F_u52A8Apache&quot;&gt;&lt;a href=&quot;#1_u3001_u542F_u52A8Apache&quot; class=&quot;headerlink&quot; title=&quot;1、启动Apache&quot;&gt;&lt;/a&gt;1、启动Apache&lt;/h2&gt;&lt;p&gt;打开终端：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;开启apache命令：sudo apachectl start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;关闭apache命令：sudo apachectl stop&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;重启apache命令：sudo apachectl restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;启用apache后，可以直接在浏览器访问&lt;code&gt;http://localhost&lt;/code&gt;，出现“&lt;code&gt;It works！&lt;/code&gt;”表示运行正常。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;用户级的根目录是：&lt;code&gt;~Sites&lt;/code&gt;，也就是站点目录。在 OS X Mountain Lion 中，这个目录可能没有，所以你需要手动建立一个同名目录。建立方式很简单，直接在终端中运行：&lt;code&gt;sudo mkdir Sites&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;建立”站点”文件夹之后，检查下面这个文件夹下面是不是有”&lt;code&gt;你的用户名.conf&lt;/code&gt;”这个文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果没有，那么你需要创建一个，取名为“&lt;code&gt;dylan.conf&lt;/code&gt;”，可以使用 vi 或者 nano 这两种编辑器之一来创建。&lt;/p&gt;
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo vi /etc/apache2/users/haibor.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;创建之后将下面的这几行内容写到上面的 conf 文件中：&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;Directory&lt;/span&gt; &quot;/&lt;span class=&quot;attribute&quot;&gt;Users&lt;/span&gt;/&lt;span class=&quot;attribute&quot;&gt;haibor&lt;/span&gt;/&lt;span class=&quot;attribute&quot;&gt;Sites&lt;/span&gt;/&quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Options Indexes MultiViews&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    AllowOverride All&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Order allow,deny&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Allow from all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;Directory&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;文件保存之后，给它赋予相应的权限：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo chmod &lt;span class=&quot;number&quot;&gt;755&lt;/span&gt; /etc/apache2/users/haibor.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;接下来重启 Apache，以使该配置文件生效：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apachectl restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;之后你就可以通过浏览器访问你的用户级目录网页了，你可以随便防个网页进去测试一下。根目录地址为：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost/~haibor/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost/~haibor/&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;也可以更改根目录，但要记得给新文件夹设置，文件夹需要有执行权限x，设置了755就可以了：&lt;/p&gt;
+&lt;figure class=&quot;highlight dockerfile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir /Users/&lt;span class=&quot;built_ins&quot;&gt;user&lt;/span&gt;/workspace&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mod 755 /&lt;span class=&quot;built_ins&quot;&gt;User&lt;/span&gt;/&lt;span class=&quot;built_ins&quot;&gt;user&lt;/span&gt;/workspace&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;etc/apache2/httpd.conf&lt;/code&gt;文件里的 &lt;code&gt;/Library/WebServer/Documents&lt;/code&gt; 都替换成自己的路径，比如 &lt;code&gt;/User/user/workspace&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;重启Apache：&lt;code&gt;apachectl restart&lt;/code&gt;，再次访问 &lt;a href=&quot;http://localhost/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost/&lt;/a&gt; 即显示的是更改后的文件里的内容了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;u4E8C_u3001_u5F00_u542F_PHP&quot;&gt;&lt;a href=&quot;#u4E8C_u3001_u5F00_u542F_PHP&quot; class=&quot;headerlink&quot; title=&quot;二、开启 PHP&quot;&gt;&lt;/a&gt;二、开启 PHP&lt;/h2&gt;&lt;p&gt;OS X 中已经集成了 PHP 5.4.30 版本，需要手动开启。你可以用 &lt;code&gt;vi&lt;/code&gt; 或者 &lt;code&gt;nano&lt;/code&gt; 编辑器打开下面这个文件：&lt;/p&gt;
+&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo nano &lt;span class=&quot;regexp&quot;&gt;/etc/&lt;/span&gt;apache2&lt;span class=&quot;regexp&quot;&gt;/httpd.conf&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后按ctl+W进行查找，搜索”php”，第一条匹配的应该是下面这句代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight apache&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;&lt;span class=&quot;common&quot;&gt;LoadModule&lt;/span&gt;&lt;/span&gt; php5_module libexec/apache2/libphp5.so&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;请将这句代码前面的#去掉，然后保存文件。&lt;/p&gt;
+&lt;p&gt;接下来再一次重启 Apache：&lt;/p&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;sudo&lt;/span&gt; apachectl restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;现在 PHP 应该已经开始工作了，你可以在用户级根目录下(~/Sites/)放一个PHP测试文件，代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;&amp;lt;?php&lt;/span&gt; phpinfo(); &lt;span class=&quot;preprocessor&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;u4E09_u3001_u5B89_u88C5_MySQL&quot;&gt;&lt;a href=&quot;#u4E09_u3001_u5B89_u88C5_MySQL&quot; class=&quot;headerlink&quot; title=&quot;三、安装 MySQL&quot;&gt;&lt;/a&gt;三、安装 MySQL&lt;/h2&gt;&lt;p&gt;OS X 中并没有集成 Mysql，需要手动安装。你可以点击 &lt;a href=&quot;http://dev.mysql.com/downloads/mysql/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://dev.mysql.com/downloads/mysql/&lt;/a&gt; 去官网下载 MySQL 的安装包。&lt;/p&gt;
+&lt;p&gt;请下载 &lt;code&gt;Mac OS X 10.7 (x86, 64-bit).DMG Archive&lt;/code&gt;  （如有更新版本，可下载）。&lt;/p&gt;
+&lt;p&gt;下载完DMG之后，双击你会提取出三个文件和一个 &lt;code&gt;ReadMe.txt&lt;/code&gt; 文档。这三个文件分别是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mysql-5.6.15-osx10.7-x86_64.pkg&lt;br&gt;MySQLstartupitem.pkg&lt;br&gt;MySQL.PrefPane&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;你需要逐一安装这三个文件，&lt;code&gt;MySQLStartupItem.pkg&lt;/code&gt; 安装后，mysql会随系统启动而自启动，&lt;code&gt;MySQL.prefPane&lt;/code&gt; 表示可以在系统偏好设置中看到mysql选项，还有一个就是mysql的安装项。&lt;/p&gt;
+&lt;p&gt;三个文件都安装完成之后，进入&lt;code&gt;系统偏好设置&lt;/code&gt;，在面板的最下面你会看到一个 MySQL 的设置项，点击它之后就可以启动MySQL。&lt;/p&gt;
+&lt;p&gt;也可以通过命令开启mysql：&lt;br&gt;&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/mysql/support-&lt;span class=&quot;built_in&quot;&gt;files&lt;/span&gt;/mysql.server &lt;span class=&quot;built_in&quot;&gt;start&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果你想查看 MySQL 的版本，可以用下面这个命令：&lt;br&gt;&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;/usr/&lt;/span&gt;local&lt;span class=&quot;regexp&quot;&gt;/mysql/&lt;/span&gt;bin&lt;span class=&quot;regexp&quot;&gt;/mysql -v&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;运行上面这个命令之后，会直接从命令行中登录到 MySQL，输入命令 \q 即可退出。&lt;/p&gt;
+&lt;p&gt;到这里 MySQL 已经配置完成，并且可以运行。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为了更加方便使用，最好再设置一下系统环境变量，也就是让 mysql 这个命令在任何路径都可以直接启动(不需要输入一长串的准确路径)。&lt;/p&gt;
+&lt;p&gt;设置环境变量也很方便，直接用命令(这里用 vi 编辑器举例)：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; vi .bash_profile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果没有这个文件，就要先创建一个&lt;br&gt;进入当前用户的home目录&lt;br&gt;输入&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ~&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//创建.bash_profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;touch .bash_profile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然后按字母 i 进入编辑模式，将下面的这句代码贴进去：&lt;br&gt;  &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; PATH=&lt;span class=&quot;string&quot;&gt;&quot;/usr/local/mysql/bin:&lt;span class=&quot;variable&quot;&gt;$PATH&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然后按 &lt;code&gt;esc&lt;/code&gt; 退出编辑器，再输入 &lt;code&gt;:wq&lt;/code&gt;(别忘了冒号)保存退出。当然你如果使用 &lt;code&gt;nano&lt;/code&gt; 或者别的编辑器的话，操作方式跟这个可能不一样，反正意思就是将上面那句话写入到 &lt;code&gt;.bash_profile&lt;/code&gt; 文件中。&lt;/p&gt;
+&lt;p&gt;接下来还要重新加载一下 &lt;code&gt;Shell&lt;/code&gt; 以让上面的环境变量生效：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt; ~/.bash_profile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;之后你就可以在终端的任意目录使用 mysql 命令了，你可以运行 &lt;code&gt;mysql -v&lt;/code&gt;试试。&lt;/p&gt;
+&lt;p&gt;最后一步，安装好后默认的用户名是root，密码为空，你还应该给你的 MySQL 设置一个 &lt;code&gt;root&lt;/code&gt; 用户密码，命令如下：&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;mysqladmin&lt;/span&gt; -u root password &lt;span class=&quot;string&quot;&gt;&#39;这里填你要设置的密码&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;(请记住密码一定要用半角单引号包起来)&lt;/p&gt;
+&lt;p&gt;上面的 mysqladmin 命令，我没有写完整路径。因为上面我们已经设置了环境变量，如果你没有设置环境变量的话，就需要用/usr/local/mysql/bin/mysqladmin &lt;strong&gt;&lt;em&gt;**&lt;/em&gt;&lt;/strong&gt; 来运行。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;u56DB_u3001_u5B89_u88C5_phpMyAdmin__u6216_adminer&quot;&gt;&lt;a href=&quot;#u56DB_u3001_u5B89_u88C5_phpMyAdmin__u6216_adminer&quot; class=&quot;headerlink&quot; title=&quot;四、安装 phpMyAdmin 或 adminer&quot;&gt;&lt;/a&gt;四、安装 phpMyAdmin 或 adminer&lt;/h2&gt;&lt;p&gt;在安装 phpMyAdmin 之前，请首先修复 2002 socket 错误：&lt;br&gt;&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo mkdir &lt;span class=&quot;regexp&quot;&gt;/var/my&lt;/span&gt;sql&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo ln -s &lt;span class=&quot;regexp&quot;&gt;/tmp/my&lt;/span&gt;sql.sock &lt;span class=&quot;regexp&quot;&gt;/var/my&lt;/span&gt;sql&lt;span class=&quot;regexp&quot;&gt;/mysql.sock&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;接着可以在 &lt;code&gt;phpMyAdmin&lt;/code&gt; 官网下载安装包，推荐下载 &lt;code&gt;english.tar.gz&lt;/code&gt;，也可以下载 &lt;code&gt;all-languages.tar.gz&lt;/code&gt; 使用中文版，解压之后，将解压出来的文件夹改名为&lt;code&gt;phpmyadmin&lt;/code&gt;，并放到上面建立的”站点”目录下(~/Sites)。&lt;/p&gt;
+&lt;p&gt;然后在 &lt;code&gt;phpmyadmin&lt;/code&gt; 下建立一个 &lt;code&gt;config&lt;/code&gt; 文件夹：&lt;br&gt;到这里就算完成了，接下来你就可以访问 &lt;a href=&quot;http://localhost/~haibor/phpmyadmin/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost/~haibor/phpmyadmin/&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;来通过 &lt;code&gt;phpmysql&lt;/code&gt; 管理你的数据库了。 &lt;/p&gt;
+&lt;p&gt;也可以使用 &lt;code&gt;adminer&lt;/code&gt; 来管理，很方便的说，推荐相关文章 轻量级主流数据库Web端管理工具&lt;code&gt;Adminer&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;u4E94_u3001_u8BBE_u7F6E_u865A_u62DF_u4E3B_u673A&quot;&gt;&lt;a href=&quot;#u4E94_u3001_u8BBE_u7F6E_u865A_u62DF_u4E3B_u673A&quot; class=&quot;headerlink&quot; title=&quot;五、设置虚拟主机&quot;&gt;&lt;/a&gt;五、设置虚拟主机&lt;/h2&gt;&lt;p&gt;配置 Apache 文件：&lt;br&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo &lt;span class=&quot;keyword&quot;&gt;vi&lt;/span&gt; /etc/apache2/httpd.&lt;span class=&quot;keyword&quot;&gt;conf&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;httpd.conf&lt;/code&gt; 中找到 &lt;code&gt;#Include /private/etc/apache2/extra/httpd-vhosts.conf&lt;/code&gt;，去掉前面的“＃”，“:wq!” 保存并退出。&lt;/p&gt;
+&lt;p&gt;重启 Apache：&lt;code&gt;sudo apachectl restart&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;配置虚拟主机文件 &lt;code&gt;httpd-vhost.conf&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo vi &lt;span class=&quot;regexp&quot;&gt;/etc/&lt;/span&gt;apache2&lt;span class=&quot;regexp&quot;&gt;/extra/&lt;/span&gt;httpd-vhosts.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;实际上，这两个虚拟主机是不存在的，在没有配置任何其他虚拟主机时，可能会导致访问localhost时出现如下提示：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Forbidden You don’t have permission to access /index.php on this server&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最简单的办法就是在它们每行前面加上#，注释掉就好了，这样既能参考又不导致其他问题。&lt;/p&gt;
+&lt;h2 id=&quot;u516D_u3001_u5173_u4E8E_php-ini&quot;&gt;&lt;a href=&quot;#u516D_u3001_u5173_u4E8E_php-ini&quot; class=&quot;headerlink&quot; title=&quot;六、关于 php.ini&quot;&gt;&lt;/a&gt;六、关于 php.ini&lt;/h2&gt;&lt;p&gt;先复制一份 php.ini，然后就可以通过php.ini来配置各种PHP功能了。&lt;br&gt;&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo cp &lt;span class=&quot;regexp&quot;&gt;/etc/&lt;/span&gt;php.ini.&lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;regexp&quot;&gt;/etc/&lt;/span&gt;php.ini&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;例如修改 &lt;code&gt;upload_max_filesize&lt;/code&gt;、&lt;code&gt;memory_limit&lt;/code&gt;、&lt;code&gt;post_max_size&lt;/code&gt; 三项值，来调整PHP提交文件的最大值，比如&lt;code&gt;phpMyAdmin&lt;/code&gt; 中导入数据的最大值。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;osX系统是默认自带的有php和apache的 &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1_u3001_u542F_u52A8Apache&quot;&gt;&lt;a href=&quot;#1_u3001_u542F_u52A8Apache&quot; class=&quot;headerlink&quot; title=&quot;1、启动Apache&quot;&gt;&lt;/a&gt;1、启动Apache&lt;/h2&gt;&lt;p&gt;打开终端：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;开启apache命令：sudo apachectl start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;关闭apache命令：sudo apachectl stop&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;重启apache命令：sudo apachectl restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;启用apache后，可以直接在浏览器访问&lt;code&gt;http://localhost&lt;/code&gt;，出现“&lt;code&gt;It works！&lt;/code&gt;”表示运行正常。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;用户级的根目录是：&lt;code&gt;~Sites&lt;/code&gt;，也就是站点目录。在 OS X Mountain Lion 中，这个目录可能没有，所以你需要手动建立一个同名目录。建立方式很简单，直接在终端中运行：&lt;code&gt;sudo mkdir Sites&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;建立”站点”文件夹之后，检查下面这个文件夹下面是不是有”&lt;code&gt;你的用户名.conf&lt;/code&gt;”这个文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果没有，那么你需要创建一个，取名为“&lt;code&gt;dylan.conf&lt;/code&gt;”，可以使用 vi 或者 nano 这两种编辑器之一来创建。&lt;/p&gt;
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo vi /etc/apache2/users/haibor.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://k-dylan.github.io/categories/PHP/"/>
+    
+    
+      <category term="Mac" scheme="http://k-dylan.github.io/tags/Mac/"/>
+    
+      <category term="PHP" scheme="http://k-dylan.github.io/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>URI和URL的区别</title>
+    <link href="http://k-dylan.github.io/2016/02/07/URI%E5%92%8CURL%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://k-dylan.github.io/2016/02/07/URI和URL的区别/</id>
+    <published>2016-02-07T03:19:51.000Z</published>
+    <updated>2016-02-19T15:50:05.000Z</updated>
+    
+    <content type="html">&lt;p&gt;URI：是&lt;code&gt;uniform resource identifier&lt;/code&gt;，统一资源标识符，用来唯一的标识一个资源；&lt;/p&gt;
+&lt;p&gt;URL: 是&lt;code&gt;uniform resource locator&lt;/code&gt;，统一资源定位器，它是一种具体的URI；&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;URL可以用来标识一个资源，而且还指明如何如何locator这个资源。&lt;br&gt;URI是一种抽象的，更高层次的概念定义统一资源标识，而URL则是具体的资源标识方式&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;URI：是&lt;code&gt;uniform resource identifier&lt;/code&gt;，统一资源标识符，用来唯一的标识一个资源；&lt;/p&gt;
+&lt;p&gt;URL: 是&lt;code&gt;uniform resource locator&lt;/code&gt;，统一资源定位器，它是一种具体的URI；
+    
+    </summary>
+    
+      <category term="HTTP" scheme="http://k-dylan.github.io/categories/HTTP/"/>
+    
+    
+      <category term="url" scheme="http://k-dylan.github.io/tags/url/"/>
+    
+      <category term="前端" scheme="http://k-dylan.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+</feed>
