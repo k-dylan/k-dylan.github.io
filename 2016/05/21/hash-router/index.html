@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>基于hash和pushState的网页前端路由实现 | Dylan&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="现在单页面应用是越来越流行了，而路由则是这种程序的基础，比如vue-router、angular-router等路由组件，今天我们来实现一个简单的路由类。
+需求
+支持hashURL，例如：http://test.com#/path    
+兼容History Api">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于hash和pushState的网页前端路由实现">
+<meta property="og:url" content="http://k-dylan.github.io/2016/05/21/hash-router/index.html">
+<meta property="og:site_name" content="Dylan's Blog">
+<meta property="og:description" content="现在单页面应用是越来越流行了，而路由则是这种程序的基础，比如vue-router、angular-router等路由组件，今天我们来实现一个简单的路由类。
+需求
+支持hashURL，例如：http://test.com#/path    
+兼容History Api">
+<meta property="og:updated_time" content="2016-05-21T13:39:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于hash和pushState的网页前端路由实现">
+<meta name="twitter:description" content="现在单页面应用是越来越流行了，而路由则是这种程序的基础，比如vue-router、angular-router等路由组件，今天我们来实现一个简单的路由类。
+需求
+支持hashURL，例如：http://test.com#/path    
+兼容History Api">
+  
+    <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars3.githubusercontent.com/u/10095894?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Dylan</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">每天进步一点点</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/k-dylan" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/url/" style="font-size: 10px;">url</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Dylan</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars3.githubusercontent.com/u/10095894?v=3&amp;s=460" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Dylan</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">每天进步一点点</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/k-dylan" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-hash-router" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/21/hash-router/" class="article-date">
+  	<time datetime="2016-05-21T12:58:53.000Z" itemprop="datePublished">2016-05-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      基于hash和pushState的网页前端路由实现
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/javascript/">javascript</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>现在单页面应用是越来越流行了，而路由则是这种程序的基础，比如<code>vue-router</code>、<code>angular-router</code>等路由组件，今天我们来实现一个简单的路由类。</p>
+<h2 id="u9700_u6C42"><a href="#u9700_u6C42" class="headerlink" title="需求"></a>需求</h2><ul>
+<li>支持hashURL，例如：<a href="http://test.com#/path" target="_blank" rel="external">http://test.com#/path</a>    </li>
+<li>兼容History Api<a id="more"></a>
+<h2 id="u539F_u7406"><a href="#u539F_u7406" class="headerlink" title="原理"></a>原理</h2>单页面应用需要在页面不刷新的情况下，通过更改地址栏url实现不同路由的切换，有两个api可以使用：</li>
+<li>采用 <code>location.hash</code> 实现hash(#号)URL路由判断</li>
+<li>采用 HTML5中的 <code>history.pushState()</code> 方法，<a href="https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history" target="_blank" rel="external">详细说明</a>;<blockquote>
+<p>两种方式各有特点，第一个兼容性较好，可以在各种浏览器中运行，但是URL中会有一个<code>#</code>,看起来不好看，第一个是HTML5属性，只能在现代浏览器中运行；</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="u5B9E_u73B0"><a href="#u5B9E_u73B0" class="headerlink" title="实现"></a>实现</h2><h3 id="u914D_u7F6E_u6A21_u5F0F"><a href="#u914D_u7F6E_u6A21_u5F0F" class="headerlink" title="配置模式"></a>配置模式</h3><p>配置路由模式，分为两种 <code>hash</code> 和 <code>history</code>，当浏览器不支持 <code>history</code>时，即使设置为 <code>histroy</code> 模式，仍然使用 <code>hash</code> 模式。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.mode = options &amp;&amp; options.mode == <span class="string">'history'</span> </span><br><span class="line">                &amp;&amp;  !!(history.pushState) ? <span class="string">'history'</span> : <span class="string">'hash'</span>;</span><br><span class="line">                </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u8DEF_u7531_u89C4_u5219_u5B58_u50A8"><a href="#u8DEF_u7531_u89C4_u5219_u5B58_u50A8" class="headerlink" title="路由规则存储"></a>路由规则存储</h3><p>使用一个数组保存路由规则，每条路由规则对象有四个属性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> route = &#123;</span><br><span class="line">    reg: <span class="keyword">new</span> <span class="built_in">RegExp</span>(), <span class="comment">// 路由匹配对象，通过_compile函数解析后生成</span></span><br><span class="line">    paramsName: [], <span class="comment">// 路由参数数组，保存参数名</span></span><br><span class="line">    name: <span class="string">'name'</span>, <span class="comment">// 路由名称</span></span><br><span class="line">    hander: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125; <span class="comment">// 路由执行函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u6DFB_u52A0_u8DEF_u7531"><a href="#u6DFB_u52A0_u8DEF_u7531" class="headerlink" title="添加路由"></a>添加路由</h3><p>就是将定义的路由对象添加到routers数组中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">path, name, hander</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> name === <span class="string">'function'</span>)&#123;</span><br><span class="line">        hander = name;</span><br><span class="line">        name = path;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> route = <span class="keyword">this</span>._compile(path);</span><br><span class="line">    <span class="keyword">this</span>.routers.push(&#123;</span><br><span class="line">        reg: route.reg,</span><br><span class="line">        paramsName: route.paramsName,</span><br><span class="line">        name: name,</span><br><span class="line">        hander: hander</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u89E3_u6790_u8DEF_u7531"><a href="#u89E3_u6790_u8DEF_u7531" class="headerlink" title="解析路由"></a>解析路由</h3><p>也就是将定义的路由规则转换为正则表达式，便于以后匹配路由;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">router</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> route = &#123;&#125;; <span class="comment">// 路由对象</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 将/post/:postid 转换为 /post/(\w+);</span></span><br><span class="line">    <span class="keyword">var</span> paramsReg = <span class="regexp">/:(\w+)/g</span>;</span><br><span class="line">    <span class="keyword">var</span> paramsMatch = router.match(paramsReg);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(paramsMatch) &#123;</span><br><span class="line">        </span><br><span class="line">        route.paramsName = paramsMatch.map(<span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> name.replace(<span class="string">':'</span>,<span class="string">''</span>)</span><br><span class="line">        &#125;);</span><br><span class="line">        router = router.replace(<span class="regexp">/:(\w+)/g</span>, <span class="string">'(\\w+)'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    route.reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>( <span class="string">'^'</span> + router + <span class="string">'$'</span>);</span><br><span class="line">    <span class="keyword">return</span> route;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u76D1_u542C_u8DEF_u7531"><a href="#u76D1_u542C_u8DEF_u7531" class="headerlink" title="监听路由"></a>监听路由</h3><p>也就是绑定浏览器时间，在url改变时处理获取path匹配路由<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 绑定监听事件            </span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.mode === <span class="string">'history'</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>._addEvent(<span class="built_in">window</span>, <span class="string">'popstate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> path = location.path;</span><br><span class="line">            self._check(path);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>._addEvent(<span class="built_in">window</span>, <span class="string">'hashchange'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// location.hash默认返回的是带#号的hash，需要去掉#号</span></span><br><span class="line">            <span class="keyword">var</span> path = location.hash.replace(<span class="regexp">/^#/</span>,<span class="string">''</span>);</span><br><span class="line">            self._check(path);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u5339_u914D_u8DEF_u7531"><a href="#u5339_u914D_u8DEF_u7531" class="headerlink" title="匹配路由"></a>匹配路由</h3><p>循环路由数组，发现匹配的对象，则处理路由参数，并执行路由处理函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">path</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> routers = <span class="keyword">this</span>.routers;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,len = routers.length; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> match = path.match(routers[i].reg);</span><br><span class="line">        <span class="comment">// 匹配成功</span></span><br><span class="line">        <span class="keyword">if</span>(match) &#123;</span><br><span class="line">            <span class="keyword">var</span> params = &#123;&#125;;</span><br><span class="line">            <span class="comment">// 组合参数</span></span><br><span class="line">            routers[i].paramsName &amp;&amp; routers[i].paramsName</span><br><span class="line">                .forEach(<span class="function"><span class="keyword">function</span> (<span class="params">name,index</span>) </span>&#123;</span><br><span class="line">                    params[name] = match[index + <span class="number">1</span>];</span><br><span class="line">                &#125;);</span><br><span class="line">            </span><br><span class="line">            routers[i].hander.call(&#123;&#125;, &#123;</span><br><span class="line">                params: params </span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 都不匹配时，如果有默认函数则执行</span></span><br><span class="line">    <span class="keyword">this</span>.defaultHander &amp;&amp; <span class="keyword">this</span>.defaultHander.call(&#123;&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u6700_u7EC8_u4EE3_u7801"><a href="#u6700_u7EC8_u4EE3_u7801" class="headerlink" title="最终代码"></a>最终代码</h3><p>基本上主要问题就这么多，最终代码已上传github</p>
+<p><a href="https://github.com/k-dylan/SRouter" target="_blank" rel="external">github</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/02/get-hidden-node-height/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js获取隐藏元素的实际宽和高</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="hash-router" data-title="基于hash和pushState的网页前端路由实现" data-url="http://k-dylan.github.io/2016/05/21/hash-router/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Dylan
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      		
+						<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257493528'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257493528%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+					
+				</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
