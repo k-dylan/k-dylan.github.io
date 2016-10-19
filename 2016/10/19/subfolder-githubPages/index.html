@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Dylan's Blog">
 <meta property="og:description" content="需求在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的gh-pages分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到gh-pages分支中。这时就可以使用git subtree 功能
 什么是 git subtreegit subtree 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就">
-<meta property="og:updated_time" content="2016-10-19T05:34:21.000Z">
+<meta property="og:updated_time" content="2016-10-19T13:45:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将项目web目录部署到gh-pages分支">
 <meta name="twitter:description" content="需求在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的gh-pages分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到gh-pages分支中。这时就可以使用git subtree 功能
@@ -221,7 +221,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="u9700_u6C42"><a href="#u9700_u6C42" class="headerlink" title="需求"></a>需求</h2><p>在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的<code>gh-pages</code>分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到<code>gh-pages</code>分支中。这时就可以使用<code>git subtree</code> 功能</p>
-<h2 id="u4EC0_u4E48_u662F_git_subtree"><a href="#u4EC0_u4E48_u662F_git_subtree" class="headerlink" title="什么是 git subtree"></a>什么是 git subtree</h2><p><code>git subtree</code> 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就是：可以在一个项目中引用另外一个项目仓库中的代码</p>
+<h2 id="u4EC0_u4E48_u662F_git_subtree"><a href="#u4EC0_u4E48_u662F_git_subtree" class="headerlink" title="什么是 git subtree"></a>什么是 git subtree</h2><p><code>git subtree</code> 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就是：可以在一个项目中引用另外一个项目仓库中的代码<br><a id="more"></a></p>
 <h2 id="git_subtree__u5982_u4F55_u4F7F_u7528"><a href="#git_subtree__u5982_u4F55_u4F7F_u7528" class="headerlink" title="git subtree 如何使用"></a>git subtree 如何使用</h2><p>初始化子项目<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git subtree add --prefix=用来存放子项目的文件夹 子项目库地址 分支</span><br><span class="line">// 运行后会自动把子项目分支中的代码下载到指定的文件夹中</span><br></pre></td></tr></table></figure></p>
 <p>提交更改到子项目<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git subtree push --prefix=用来存放子项目的文件夹 子项目库地址 分支</span><br></pre></td></tr></table></figure></p>
 <p>更新子项目新的代码到父项目<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git subtree pull --prefix=用来存放子项目的文件夹 子项目库地址 分支</span><br></pre></td></tr></table></figure></p>
