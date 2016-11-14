@@ -4,9 +4,9 @@
   <subtitle>每天进步一点点</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://k-dylan.github.io/"/>
+  <link href="http://kdylan.me/"/>
   <updated>2016-10-19T13:45:04.000Z</updated>
-  <id>http://k-dylan.github.io/</id>
+  <id>http://kdylan.me/</id>
   
   <author>
     <name>Dylan</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>将项目web目录部署到gh-pages分支</title>
-    <link href="http://k-dylan.github.io/2016/10/19/subfolder-githubPages/"/>
-    <id>http://k-dylan.github.io/2016/10/19/subfolder-githubPages/</id>
+    <link href="http://kdylan.me/2016/10/19/subfolder-githubPages/"/>
+    <id>http://kdylan.me/2016/10/19/subfolder-githubPages/</id>
     <published>2016-10-19T05:13:53.000Z</published>
     <updated>2016-10-19T13:45:04.000Z</updated>
     
@@ -37,17 +37,17 @@
     
     </summary>
     
-      <category term="git" scheme="http://k-dylan.github.io/categories/git/"/>
+      <category term="git" scheme="http://kdylan.me/categories/git/"/>
     
     
-      <category term="git" scheme="http://k-dylan.github.io/tags/git/"/>
+      <category term="git" scheme="http://kdylan.me/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>基于hash和pushState的网页前端路由实现</title>
-    <link href="http://k-dylan.github.io/2016/05/21/hash-router/"/>
-    <id>http://k-dylan.github.io/2016/05/21/hash-router/</id>
+    <link href="http://kdylan.me/2016/05/21/hash-router/"/>
+    <id>http://kdylan.me/2016/05/21/hash-router/</id>
     <published>2016-05-21T12:58:53.000Z</published>
     <updated>2016-09-30T14:20:57.000Z</updated>
     
@@ -81,19 +81,19 @@
     
     </summary>
     
-      <category term="javascript" scheme="http://k-dylan.github.io/categories/javascript/"/>
+      <category term="javascript" scheme="http://kdylan.me/categories/javascript/"/>
     
     
-      <category term="javascript" scheme="http://k-dylan.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="http://kdylan.me/tags/javascript/"/>
     
-      <category term="前端" scheme="http://k-dylan.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://kdylan.me/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>js获取隐藏元素的实际宽和高</title>
-    <link href="http://k-dylan.github.io/2016/05/02/get-hidden-node-height/"/>
-    <id>http://k-dylan.github.io/2016/05/02/get-hidden-node-height/</id>
+    <link href="http://kdylan.me/2016/05/02/get-hidden-node-height/"/>
+    <id>http://kdylan.me/2016/05/02/get-hidden-node-height/</id>
     <published>2016-05-02T04:51:45.000Z</published>
     <updated>2016-05-02T13:39:24.000Z</updated>
     
@@ -115,19 +115,19 @@
     
     </summary>
     
-      <category term="javascript" scheme="http://k-dylan.github.io/categories/javascript/"/>
+      <category term="javascript" scheme="http://kdylan.me/categories/javascript/"/>
     
     
-      <category term="javascript" scheme="http://k-dylan.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="http://kdylan.me/tags/javascript/"/>
     
-      <category term="前端" scheme="http://k-dylan.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://kdylan.me/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>CSS3中使用transition过渡动画高度自适应的问题</title>
-    <link href="http://k-dylan.github.io/2016/05/01/css-transition-auto/"/>
-    <id>http://k-dylan.github.io/2016/05/01/css-transition-auto/</id>
+    <link href="http://kdylan.me/2016/05/01/css-transition-auto/"/>
+    <id>http://kdylan.me/2016/05/01/css-transition-auto/</id>
     <published>2016-05-01T03:19:51.000Z</published>
     <updated>2016-05-01T14:36:37.000Z</updated>
     
@@ -143,19 +143,19 @@
     
     </summary>
     
-      <category term="css" scheme="http://k-dylan.github.io/categories/css/"/>
+      <category term="css" scheme="http://kdylan.me/categories/css/"/>
     
     
-      <category term="css" scheme="http://k-dylan.github.io/tags/css/"/>
+      <category term="css" scheme="http://kdylan.me/tags/css/"/>
     
-      <category term="前端" scheme="http://k-dylan.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://kdylan.me/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>Hexo部署到Github上文件夹的大小写问题</title>
-    <link href="http://k-dylan.github.io/2016/02/19/hexo-deploy-low-dir/"/>
-    <id>http://k-dylan.github.io/2016/02/19/hexo-deploy-low-dir/</id>
+    <link href="http://kdylan.me/2016/02/19/hexo-deploy-low-dir/"/>
+    <id>http://kdylan.me/2016/02/19/hexo-deploy-low-dir/</id>
     <published>2016-02-19T15:59:23.000Z</published>
     <updated>2016-02-19T16:21:00.000Z</updated>
     
@@ -180,17 +180,17 @@
     
     </summary>
     
-      <category term="Node" scheme="http://k-dylan.github.io/categories/Node/"/>
+      <category term="Node" scheme="http://kdylan.me/categories/Node/"/>
     
     
-      <category term="Hexo" scheme="http://k-dylan.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://kdylan.me/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>express中使用ejs</title>
-    <link href="http://k-dylan.github.io/2016/02/17/express-ejs/"/>
-    <id>http://k-dylan.github.io/2016/02/17/express-ejs/</id>
+    <link href="http://kdylan.me/2016/02/17/express-ejs/"/>
+    <id>http://kdylan.me/2016/02/17/express-ejs/</id>
     <published>2016-02-16T16:13:53.000Z</published>
     <updated>2016-02-19T15:49:57.000Z</updated>
     
@@ -212,17 +212,17 @@
     
     </summary>
     
-      <category term="Node" scheme="http://k-dylan.github.io/categories/Node/"/>
+      <category term="Node" scheme="http://kdylan.me/categories/Node/"/>
     
     
-      <category term="Node" scheme="http://k-dylan.github.io/tags/Node/"/>
+      <category term="Node" scheme="http://kdylan.me/tags/Node/"/>
     
   </entry>
   
   <entry>
     <title>Mac下Apache和php的配置</title>
-    <link href="http://k-dylan.github.io/2016/02/15/mac+apache+php/"/>
-    <id>http://k-dylan.github.io/2016/02/15/mac+apache+php/</id>
+    <link href="http://kdylan.me/2016/02/15/mac+apache+php/"/>
+    <id>http://kdylan.me/2016/02/15/mac+apache+php/</id>
     <published>2016-02-15T03:19:51.000Z</published>
     <updated>2016-02-17T08:24:14.000Z</updated>
     
@@ -326,19 +326,19 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://k-dylan.github.io/categories/PHP/"/>
+      <category term="PHP" scheme="http://kdylan.me/categories/PHP/"/>
     
     
-      <category term="Mac" scheme="http://k-dylan.github.io/tags/Mac/"/>
+      <category term="Mac" scheme="http://kdylan.me/tags/Mac/"/>
     
-      <category term="PHP" scheme="http://k-dylan.github.io/tags/PHP/"/>
+      <category term="PHP" scheme="http://kdylan.me/tags/PHP/"/>
     
   </entry>
   
   <entry>
     <title>URI和URL的区别</title>
-    <link href="http://k-dylan.github.io/2016/02/07/URI%E5%92%8CURL%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://k-dylan.github.io/2016/02/07/URI和URL的区别/</id>
+    <link href="http://kdylan.me/2016/02/07/URI%E5%92%8CURL%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://kdylan.me/2016/02/07/URI和URL的区别/</id>
     <published>2016-02-07T03:19:51.000Z</published>
     <updated>2016-02-19T15:50:05.000Z</updated>
     
@@ -356,12 +356,12 @@
     
     </summary>
     
-      <category term="HTTP" scheme="http://k-dylan.github.io/categories/HTTP/"/>
+      <category term="HTTP" scheme="http://kdylan.me/categories/HTTP/"/>
     
     
-      <category term="url" scheme="http://k-dylan.github.io/tags/url/"/>
+      <category term="url" scheme="http://kdylan.me/tags/url/"/>
     
-      <category term="前端" scheme="http://k-dylan.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://kdylan.me/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
