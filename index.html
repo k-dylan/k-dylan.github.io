@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/url/" style="font-size: 10px;">url</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/url/" style="font-size: 10px;">url</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a>
 					</div>
 				</section>
 				
@@ -176,6 +176,81 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-guthubPagebinddomain" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/16/guthubPagebinddomain/" class="article-date">
+  	<time datetime="2016-11-15T16:13:53.000Z" itemprop="datePublished">2016-11-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/16/guthubPagebinddomain/">为github Pages绑定顶级域名</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="u4ECA_u5929_u628A_u81EA_u5DF1_u65B0_u4E70_u7684_u57DF_u540D_kdylan-me__u4E0EGithub_Pages_u8FDB_u884C_u4E86_u7ED1_u5B9A_uFF0C_u4EE5_u540E_u5C31_u53EF_u4EE5_u901A_u8FC7_kdylan-me__u6765_u8BBF_u95EE_u535A_u5BA2_u5566_uFF01_u4E0B_u9762_u8BB0_u5F55_u4E00_u4E0B_u7ED1_u5B9A_u7684_u8FC7_u7A0B"><a href="#u4ECA_u5929_u628A_u81EA_u5DF1_u65B0_u4E70_u7684_u57DF_u540D_kdylan-me__u4E0EGithub_Pages_u8FDB_u884C_u4E86_u7ED1_u5B9A_uFF0C_u4EE5_u540E_u5C31_u53EF_u4EE5_u901A_u8FC7_kdylan-me__u6765_u8BBF_u95EE_u535A_u5BA2_u5566_uFF01_u4E0B_u9762_u8BB0_u5F55_u4E00_u4E0B_u7ED1_u5B9A_u7684_u8FC7_u7A0B" class="headerlink" title="今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程"></a>今天把自己新买的域名 <code>kdylan.me</code> 与Github Pages进行了绑定，以后就可以通过 <a href="http://kdylan.me/">kdylan.me</a> 来访问博客啦！下面记录一下绑定的过程</h2><ol>
+<li>创建<code>CNAME</code>文件<br>在网站项目repo的根目录添加<code>CNAME</code>文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kdylan.<span class="keyword">me</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>由于是本站是采用 <code>hexo</code> 搭建而成，如果直接在github网页中添加此文件，那么下次<code>hexo g -d</code>的时候就会删除此文件，所以要把该文件创建到项目的<code>source</code>文件夹根目录，那么下次<code>hexo g -d</code>的时候，就会把该文件也生成到<code>repo</code>中；</p>
+</blockquote>
+<ol>
+<li>添加域名解析 </li>
+</ol>
+<ul>
+<li>首先获取域名IP，打开电脑命令行，输入<code>ping k-dylan.github.io</code> 得到IP；</li>
+<li>在域名管理中添加两个A解析分别是<code>@</code>和<code>www</code>,IP地址填刚刚查询到的IP</li>
+</ul>
+<p>最后等域名解析完成后就可以使用顶级域名访问网站啦！！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Node/">Node</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-subfolder-githubPages" class="article article-type-post" itemscope itemprop="blogPost">
   

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kdylan.me/"/>
-  <updated>2016-10-19T13:45:04.000Z</updated>
+  <updated>2016-11-15T04:05:19.000Z</updated>
   <id>http://kdylan.me/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为github Pages绑定顶级域名</title>
+    <link href="http://kdylan.me/2016/11/16/guthubPagebinddomain/"/>
+    <id>http://kdylan.me/2016/11/16/guthubPagebinddomain/</id>
+    <published>2016-11-15T16:13:53.000Z</published>
+    <updated>2016-11-15T04:05:19.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;u4ECA_u5929_u628A_u81EA_u5DF1_u65B0_u4E70_u7684_u57DF_u540D_kdylan-me__u4E0EGithub_Pages_u8FDB_u884C_u4E86_u7ED1_u5B9A_uFF0C_u4EE5_u540E_u5C31_u53EF_u4EE5_u901A_u8FC7_kdylan-me__u6765_u8BBF_u95EE_u535A_u5BA2_u5566_uFF01_u4E0B_u9762_u8BB0_u5F55_u4E00_u4E0B_u7ED1_u5B9A_u7684_u8FC7_u7A0B&quot;&gt;&lt;a href=&quot;#u4ECA_u5929_u628A_u81EA_u5DF1_u65B0_u4E70_u7684_u57DF_u540D_kdylan-me__u4E0EGithub_Pages_u8FDB_u884C_u4E86_u7ED1_u5B9A_uFF0C_u4EE5_u540E_u5C31_u53EF_u4EE5_u901A_u8FC7_kdylan-me__u6765_u8BBF_u95EE_u535A_u5BA2_u5566_uFF01_u4E0B_u9762_u8BB0_u5F55_u4E00_u4E0B_u7ED1_u5B9A_u7684_u8FC7_u7A0B&quot; class=&quot;headerlink&quot; title=&quot;今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程&quot;&gt;&lt;/a&gt;今天把自己新买的域名 &lt;code&gt;kdylan.me&lt;/code&gt; 与Github Pages进行了绑定，以后就可以通过 &lt;a href=&quot;http://kdylan.me/&quot;&gt;kdylan.me&lt;/a&gt; 来访问博客啦！下面记录一下绑定的过程&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;创建&lt;code&gt;CNAME&lt;/code&gt;文件&lt;br&gt;在网站项目repo的根目录添加&lt;code&gt;CNAME&lt;/code&gt;文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;kdylan.&lt;span class=&quot;keyword&quot;&gt;me&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于是本站是采用 &lt;code&gt;hexo&lt;/code&gt; 搭建而成，如果直接在github网页中添加此文件，那么下次&lt;code&gt;hexo g -d&lt;/code&gt;的时候就会删除此文件，所以要把该文件创建到项目的&lt;code&gt;source&lt;/code&gt;文件夹根目录，那么下次&lt;code&gt;hexo g -d&lt;/code&gt;的时候，就会把该文件也生成到&lt;code&gt;repo&lt;/code&gt;中；&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;添加域名解析 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首先获取域名IP，打开电脑命令行，输入&lt;code&gt;ping k-dylan.github.io&lt;/code&gt; 得到IP；&lt;/li&gt;
+&lt;li&gt;在域名管理中添加两个A解析分别是&lt;code&gt;@&lt;/code&gt;和&lt;code&gt;www&lt;/code&gt;,IP地址填刚刚查询到的IP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后等域名解析完成后就可以使用顶级域名访问网站啦！！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;u4ECA_u5929_u628A_u81EA_u5DF1_u65B0_u4E70_u7684_u57DF_u540D_kdylan-me__u4E0EGithub_Pages_u8FDB_u884C_u4E86_u7ED1_u5B9A_uFF0C_u4EE5_u
+    
+    </summary>
+    
+      <category term="Node" scheme="http://kdylan.me/categories/Node/"/>
+    
+    
+      <category term="github" scheme="http://kdylan.me/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>将项目web目录部署到gh-pages分支</title>
