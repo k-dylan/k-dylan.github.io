@@ -10,9 +10,7 @@
 
 1、启动Apache打开终端：
 123开启apache命令：sudo apachectl start关闭apache命令：sudo apachectl stop重启apache命令：sudo apachectl restart
-启用apache后，可以直接在浏览器访问http://localhost，出现“It works！”表示运行正常。
-
-用">
+启用apache后，可以直接在浏览器访问http://localhost，出现“It works！”表示运行正常。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac下Apache和php的配置">
 <meta property="og:url" content="http://kdylan.me/2016/02/15/mac+apache+php/index.html">
@@ -21,9 +19,7 @@
 
 1、启动Apache打开终端：
 123开启apache命令：sudo apachectl start关闭apache命令：sudo apachectl stop重启apache命令：sudo apachectl restart
-启用apache后，可以直接在浏览器访问http://localhost，出现“It works！”表示运行正常。
-
-用">
+启用apache后，可以直接在浏览器访问http://localhost，出现“It works！”表示运行正常。">
 <meta property="og:updated_time" content="2016-02-17T08:24:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac下Apache和php的配置">
@@ -31,16 +27,14 @@
 
 1、启动Apache打开终端：
 123开启apache命令：sudo apachectl start关闭apache命令：sudo apachectl stop重启apache命令：sudo apachectl restart
-启用apache后，可以直接在浏览器访问http://localhost，出现“It works！”表示运行正常。
-
-用">
+启用apache后，可以直接在浏览器访问http://localhost，出现“It works！”表示运行正常。">
   
     <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -238,8 +232,8 @@
         <blockquote>
 <p>osX系统是默认自带的有php和apache的 </p>
 </blockquote>
-<h2 id="1_u3001_u542F_u52A8Apache"><a href="#1_u3001_u542F_u52A8Apache" class="headerlink" title="1、启动Apache"></a>1、启动Apache</h2><p>打开终端：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开启apache命令：sudo apachectl start</span><br><span class="line">关闭apache命令：sudo apachectl stop</span><br><span class="line">重启apache命令：sudo apachectl restart</span><br></pre></td></tr></table></figure>
+<h2 id="1、启动Apache"><a href="#1、启动Apache" class="headerlink" title="1、启动Apache"></a>1、启动Apache</h2><p>打开终端：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">开启apache命令：sudo apachectl start</div><div class="line">关闭apache命令：sudo apachectl stop</div><div class="line">重启apache命令：sudo apachectl restart</div></pre></td></tr></table></figure>
 <p>启用apache后，可以直接在浏览器访问<code>http://localhost</code>，出现“<code>It works！</code>”表示运行正常。</p>
 <ol>
 <li><p>用户级的根目录是：<code>~Sites</code>，也就是站点目录。在 OS X Mountain Lion 中，这个目录可能没有，所以你需要手动建立一个同名目录。建立方式很简单，直接在终端中运行：<code>sudo mkdir Sites</code></p>
@@ -248,32 +242,32 @@
 </li>
 </ol>
 <p>如果没有，那么你需要创建一个，取名为“<code>dylan.conf</code>”，可以使用 vi 或者 nano 这两种编辑器之一来创建。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/apache2/users/haibor.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apache2/users/haibor.conf</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>创建之后将下面的这几行内容写到上面的 conf 文件中：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">Directory</span> "/<span class="attribute">Users</span>/<span class="attribute">haibor</span>/<span class="attribute">Sites</span>/"&gt;</span></span><br><span class="line">    Options Indexes MultiViews</span><br><span class="line">    AllowOverride All</span><br><span class="line">    Order allow,deny</span><br><span class="line">    Allow from all</span><br><span class="line"><span class="tag">&lt;/<span class="title">Directory</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Directory</span> "/<span class="attr">Users</span>/<span class="attr">haibor</span>/<span class="attr">Sites</span>/"&gt;</span></div><div class="line">    Options Indexes MultiViews</div><div class="line">    AllowOverride All</div><div class="line">    Order allow,deny</div><div class="line">    Allow from all</div><div class="line"><span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>文件保存之后，给它赋予相应的权限：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod <span class="number">755</span> /etc/apache2/users/haibor.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod 755 /etc/apache2/users/haibor.conf</div></pre></td></tr></table></figure>
 <p>接下来重启 Apache，以使该配置文件生效：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apachectl restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apachectl restart</div></pre></td></tr></table></figure>
 <p>之后你就可以通过浏览器访问你的用户级目录网页了，你可以随便防个网页进去测试一下。根目录地址为：</p>
 <p><a href="http://localhost/~haibor/" target="_blank" rel="external">http://localhost/~haibor/</a></p>
 <blockquote>
 <p>也可以更改根目录，但要记得给新文件夹设置，文件夹需要有执行权限x，设置了755就可以了：</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /Users/<span class="built_ins">user</span>/workspace</span><br><span class="line">mod 755 /<span class="built_ins">User</span>/<span class="built_ins">user</span>/workspace</span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /Users/<span class="keyword">user</span>/workspace</div><div class="line">mod <span class="number">755</span> /<span class="keyword">User</span>/<span class="keyword">user</span>/workspace</div></pre></td></tr></table></figure>
 <p><code>etc/apache2/httpd.conf</code>文件里的 <code>/Library/WebServer/Documents</code> 都替换成自己的路径，比如 <code>/User/user/workspace</code></p>
 <p>重启Apache：<code>apachectl restart</code>，再次访问 <a href="http://localhost/" target="_blank" rel="external">http://localhost/</a> 即显示的是更改后的文件里的内容了。</p>
 </blockquote>
-<h2 id="u4E8C_u3001_u5F00_u542F_PHP"><a href="#u4E8C_u3001_u5F00_u542F_PHP" class="headerlink" title="二、开启 PHP"></a>二、开启 PHP</h2><p>OS X 中已经集成了 PHP 5.4.30 版本，需要手动开启。你可以用 <code>vi</code> 或者 <code>nano</code> 编辑器打开下面这个文件：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano <span class="regexp">/etc/</span>apache2<span class="regexp">/httpd.conf</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、开启-PHP"><a href="#二、开启-PHP" class="headerlink" title="二、开启 PHP"></a>二、开启 PHP</h2><p>OS X 中已经集成了 PHP 5.4.30 版本，需要手动开启。你可以用 <code>vi</code> 或者 <code>nano</code> 编辑器打开下面这个文件：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano <span class="regexp">/etc/</span>apache2<span class="regexp">/httpd.conf</span></div></pre></td></tr></table></figure>
 <p>然后按ctl+W进行查找，搜索”php”，第一条匹配的应该是下面这句代码：</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword"><span class="common">LoadModule</span></span> php5_module libexec/apache2/libphp5.so</span><br></pre></td></tr></table></figure>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LoadModule php5_module libexec/apache2/libphp5.so</div></pre></td></tr></table></figure>
 <p>请将这句代码前面的#去掉，然后保存文件。</p>
 <p>接下来再一次重启 Apache：</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> apachectl restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">sudo apachectl restart</span></div></pre></td></tr></table></figure>
 <p>现在 PHP 应该已经开始工作了，你可以在用户级根目录下(~/Sites/)放一个PHP测试文件，代码如下：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span> phpinfo(); <span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="u4E09_u3001_u5B89_u88C5_MySQL"><a href="#u4E09_u3001_u5B89_u88C5_MySQL" class="headerlink" title="三、安装 MySQL"></a>三、安装 MySQL</h2><p>OS X 中并没有集成 Mysql，需要手动安装。你可以点击 <a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/</a> 去官网下载 MySQL 的安装包。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> phpinfo(); <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="三、安装-MySQL"><a href="#三、安装-MySQL" class="headerlink" title="三、安装 MySQL"></a>三、安装 MySQL</h2><p>OS X 中并没有集成 Mysql，需要手动安装。你可以点击 <a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/</a> 去官网下载 MySQL 的安装包。</p>
 <p>请下载 <code>Mac OS X 10.7 (x86, 64-bit).DMG Archive</code>  （如有更新版本，可下载）。</p>
 <p>下载完DMG之后，双击你会提取出三个文件和一个 <code>ReadMe.txt</code> 文档。这三个文件分别是：</p>
 <blockquote>
@@ -281,38 +275,38 @@
 </blockquote>
 <p>你需要逐一安装这三个文件，<code>MySQLStartupItem.pkg</code> 安装后，mysql会随系统启动而自启动，<code>MySQL.prefPane</code> 表示可以在系统偏好设置中看到mysql选项，还有一个就是mysql的安装项。</p>
 <p>三个文件都安装完成之后，进入<code>系统偏好设置</code>，在面板的最下面你会看到一个 MySQL 的设置项，点击它之后就可以启动MySQL。</p>
-<p>也可以通过命令开启mysql：<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/<span class="built_in">local</span>/mysql/support-<span class="built_in">files</span>/mysql.server <span class="built_in">start</span></span><br></pre></td></tr></table></figure></p>
-<p>如果你想查看 MySQL 的版本，可以用下面这个命令：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/mysql/</span>bin<span class="regexp">/mysql -v</span></span><br></pre></td></tr></table></figure></p>
+<p>也可以通过命令开启mysql：<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /usr/<span class="built_in">local</span>/mysql/support-<span class="built_in">files</span>/mysql.server <span class="built_in">start</span></div></pre></td></tr></table></figure></p>
+<p>如果你想查看 MySQL 的版本，可以用下面这个命令：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/mysql/</span>bin<span class="regexp">/mysql -v</span></div></pre></td></tr></table></figure></p>
 <p>运行上面这个命令之后，会直接从命令行中登录到 MySQL，输入命令 \q 即可退出。</p>
 <p>到这里 MySQL 已经配置完成，并且可以运行。</p>
 <blockquote>
 <p>为了更加方便使用，最好再设置一下系统环境变量，也就是让 mysql 这个命令在任何路径都可以直接启动(不需要输入一长串的准确路径)。</p>
-<p>设置环境变量也很方便，直接用命令(这里用 vi 编辑器举例)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> vi .bash_profile</span><br></pre></td></tr></table></figure></p>
-<p>如果没有这个文件，就要先创建一个<br>进入当前用户的home目录<br>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">//创建.bash_profile</span><br><span class="line">touch .bash_profile</span><br></pre></td></tr></table></figure></p>
-<p>然后按字母 i 进入编辑模式，将下面的这句代码贴进去：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/mysql/bin:<span class="variable">$PATH</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>设置环境变量也很方便，直接用命令(这里用 vi 编辑器举例)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> vi .bash_profile</div></pre></td></tr></table></figure></p>
+<p>如果没有这个文件，就要先创建一个<br>进入当前用户的home目录<br>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~</div><div class="line">//创建.bash_profile</div><div class="line">touch .bash_profile</div></pre></td></tr></table></figure></p>
+<p>然后按字母 i 进入编辑模式，将下面的这句代码贴进去：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/mysql/bin:<span class="variable">$PATH</span>"</span></div></pre></td></tr></table></figure></p>
 <p>然后按 <code>esc</code> 退出编辑器，再输入 <code>:wq</code>(别忘了冒号)保存退出。当然你如果使用 <code>nano</code> 或者别的编辑器的话，操作方式跟这个可能不一样，反正意思就是将上面那句话写入到 <code>.bash_profile</code> 文件中。</p>
-<p>接下来还要重新加载一下 <code>Shell</code> 以让上面的环境变量生效：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+<p>接下来还要重新加载一下 <code>Shell</code> 以让上面的环境变量生效：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.bash_profile</div></pre></td></tr></table></figure></p>
 <p>之后你就可以在终端的任意目录使用 mysql 命令了，你可以运行 <code>mysql -v</code>试试。</p>
-<p>最后一步，安装好后默认的用户名是root，密码为空，你还应该给你的 MySQL 设置一个 <code>root</code> 用户密码，命令如下：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">mysqladmin</span> -u root password <span class="string">'这里填你要设置的密码'</span></span><br></pre></td></tr></table></figure></p>
+<p>最后一步，安装好后默认的用户名是root，密码为空，你还应该给你的 MySQL 设置一个 <code>root</code> 用户密码，命令如下：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">mysqladmin</span> -u root password <span class="string">'这里填你要设置的密码'</span></div></pre></td></tr></table></figure></p>
 <p>(请记住密码一定要用半角单引号包起来)</p>
 <p>上面的 mysqladmin 命令，我没有写完整路径。因为上面我们已经设置了环境变量，如果你没有设置环境变量的话，就需要用/usr/local/mysql/bin/mysqladmin <strong><em>**</em></strong> 来运行。</p>
 </blockquote>
-<h2 id="u56DB_u3001_u5B89_u88C5_phpMyAdmin__u6216_adminer"><a href="#u56DB_u3001_u5B89_u88C5_phpMyAdmin__u6216_adminer" class="headerlink" title="四、安装 phpMyAdmin 或 adminer"></a>四、安装 phpMyAdmin 或 adminer</h2><p>在安装 phpMyAdmin 之前，请首先修复 2002 socket 错误：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir <span class="regexp">/var/my</span>sql</span><br><span class="line">sudo ln -s <span class="regexp">/tmp/my</span>sql.sock <span class="regexp">/var/my</span>sql<span class="regexp">/mysql.sock</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="四、安装-phpMyAdmin-或-adminer"><a href="#四、安装-phpMyAdmin-或-adminer" class="headerlink" title="四、安装 phpMyAdmin 或 adminer"></a>四、安装 phpMyAdmin 或 adminer</h2><p>在安装 phpMyAdmin 之前，请首先修复 2002 socket 错误：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo mkdir <span class="regexp">/var/my</span>sql</div><div class="line">sudo ln -s <span class="regexp">/tmp/my</span>sql.sock <span class="regexp">/var/my</span>sql<span class="regexp">/mysql.sock</span></div></pre></td></tr></table></figure></p>
 <p>接着可以在 <code>phpMyAdmin</code> 官网下载安装包，推荐下载 <code>english.tar.gz</code>，也可以下载 <code>all-languages.tar.gz</code> 使用中文版，解压之后，将解压出来的文件夹改名为<code>phpmyadmin</code>，并放到上面建立的”站点”目录下(~/Sites)。</p>
 <p>然后在 <code>phpmyadmin</code> 下建立一个 <code>config</code> 文件夹：<br>到这里就算完成了，接下来你就可以访问 <a href="http://localhost/~haibor/phpmyadmin/" target="_blank" rel="external">http://localhost/~haibor/phpmyadmin/</a> </p>
 <p>来通过 <code>phpmysql</code> 管理你的数据库了。 </p>
 <p>也可以使用 <code>adminer</code> 来管理，很方便的说，推荐相关文章 轻量级主流数据库Web端管理工具<code>Adminer</code>。</p>
-<h2 id="u4E94_u3001_u8BBE_u7F6E_u865A_u62DF_u4E3B_u673A"><a href="#u4E94_u3001_u8BBE_u7F6E_u865A_u62DF_u4E3B_u673A" class="headerlink" title="五、设置虚拟主机"></a>五、设置虚拟主机</h2><p>配置 Apache 文件：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vi</span> /etc/apache2/httpd.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="五、设置虚拟主机"><a href="#五、设置虚拟主机" class="headerlink" title="五、设置虚拟主机"></a>五、设置虚拟主机</h2><p>配置 Apache 文件：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo <span class="keyword">vi</span> /etc/apache2/httpd.<span class="keyword">conf</span></div></pre></td></tr></table></figure></p>
 <p>在 <code>httpd.conf</code> 中找到 <code>#Include /private/etc/apache2/extra/httpd-vhosts.conf</code>，去掉前面的“＃”，“:wq!” 保存并退出。</p>
 <p>重启 Apache：<code>sudo apachectl restart</code>。</p>
 <p>配置虚拟主机文件 <code>httpd-vhost.conf</code></p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi <span class="regexp">/etc/</span>apache2<span class="regexp">/extra/</span>httpd-vhosts.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi <span class="regexp">/etc/</span>apache2<span class="regexp">/extra/</span>httpd-vhosts.conf</div></pre></td></tr></table></figure>
 <p>实际上，这两个虚拟主机是不存在的，在没有配置任何其他虚拟主机时，可能会导致访问localhost时出现如下提示：</p>
 <blockquote>
 <p>Forbidden You don’t have permission to access /index.php on this server</p>
 </blockquote>
 <p>最简单的办法就是在它们每行前面加上#，注释掉就好了，这样既能参考又不导致其他问题。</p>
-<h2 id="u516D_u3001_u5173_u4E8E_php-ini"><a href="#u516D_u3001_u5173_u4E8E_php-ini" class="headerlink" title="六、关于 php.ini"></a>六、关于 php.ini</h2><p>先复制一份 php.ini，然后就可以通过php.ini来配置各种PHP功能了。<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp <span class="regexp">/etc/</span>php.ini.<span class="keyword">default</span> <span class="regexp">/etc/</span>php.ini</span><br></pre></td></tr></table></figure></p>
+<h2 id="六、关于-php-ini"><a href="#六、关于-php-ini" class="headerlink" title="六、关于 php.ini"></a>六、关于 php.ini</h2><p>先复制一份 php.ini，然后就可以通过php.ini来配置各种PHP功能了。<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp <span class="regexp">/etc/</span>php.ini.<span class="keyword">default</span> <span class="regexp">/etc/</span>php.ini</div></pre></td></tr></table></figure></p>
 <p>例如修改 <code>upload_max_filesize</code>、<code>memory_limit</code>、<code>post_max_size</code> 三项值，来调整PHP提交文件的最大值，比如<code>phpMyAdmin</code> 中导入数据的最大值。</p>
 
       
@@ -409,7 +403,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -425,8 +419,8 @@
 		open_in_new: false
 	}
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
 
 

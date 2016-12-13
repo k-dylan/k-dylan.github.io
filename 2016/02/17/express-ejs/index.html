@@ -6,23 +6,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>express中使用ejs | Dylan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、使用express命令初始化项目1$ express -e ejs [&amp;#21518;&amp;#38754;&amp;#21487;&amp;#20197;&amp;#28155;&amp;#21152;&amp;#39033;&amp;#30446;&amp;#21517;&amp;#31216;&amp;#65292;&amp;#28155;&amp;#21152;&amp;#30340;&amp;#35805; &amp;#20250;&amp;#21019;&amp;#24314;&amp;#39033;&amp;#30446;&amp;#">
+  <meta name="description" content="1、使用express命令初始化项目1$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]
+2、启用ejs的layout模板express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件
+安装express-partials在package.json里面的dependencies中添加 &amp;quot;expres">
 <meta property="og:type" content="article">
 <meta property="og:title" content="express中使用ejs">
 <meta property="og:url" content="http://kdylan.me/2016/02/17/express-ejs/index.html">
 <meta property="og:site_name" content="Dylan's Blog">
-<meta property="og:description" content="1、使用express命令初始化项目1$ express -e ejs [&amp;#21518;&amp;#38754;&amp;#21487;&amp;#20197;&amp;#28155;&amp;#21152;&amp;#39033;&amp;#30446;&amp;#21517;&amp;#31216;&amp;#65292;&amp;#28155;&amp;#21152;&amp;#30340;&amp;#35805; &amp;#20250;&amp;#21019;&amp;#24314;&amp;#39033;&amp;#30446;&amp;#">
+<meta property="og:description" content="1、使用express命令初始化项目1$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]
+2、启用ejs的layout模板express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件
+安装express-partials在package.json里面的dependencies中添加 &amp;quot;expres">
 <meta property="og:updated_time" content="2016-02-19T15:49:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="express中使用ejs">
-<meta name="twitter:description" content="1、使用express命令初始化项目1$ express -e ejs [&amp;#21518;&amp;#38754;&amp;#21487;&amp;#20197;&amp;#28155;&amp;#21152;&amp;#39033;&amp;#30446;&amp;#21517;&amp;#31216;&amp;#65292;&amp;#28155;&amp;#21152;&amp;#30340;&amp;#35805; &amp;#20250;&amp;#21019;&amp;#24314;&amp;#39033;&amp;#30446;&amp;#">
+<meta name="twitter:description" content="1、使用express命令初始化项目1$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]
+2、启用ejs的layout模板express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件
+安装express-partials在package.json里面的dependencies中添加 &amp;quot;expres">
   
     <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -217,13 +223,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1_u3001_u4F7F_u7528express_u547D_u4EE4_u521D_u59CB_u5316_u9879_u76EE"><a href="#1_u3001_u4F7F_u7528express_u547D_u4EE4_u521D_u59CB_u5316_u9879_u76EE" class="headerlink" title="1、使用express命令初始化项目"></a>1、使用express命令初始化项目</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ express -e ejs [&#21518;&#38754;&#21487;&#20197;&#28155;&#21152;&#39033;&#30446;&#21517;&#31216;&#65292;&#28155;&#21152;&#30340;&#35805; &#20250;&#21019;&#24314;&#39033;&#30446;&#25991;&#20214;&#22841;&#65292;&#19981;&#28155;&#21152;&#23601;&#22312;&#24403;&#21069;&#25991;&#20214;&#22841;&#20869;]</span><br></pre></td></tr></table></figure>
-<h3 id="2_u3001_u542F_u7528ejs_u7684layout_u6A21_u677F"><a href="#2_u3001_u542F_u7528ejs_u7684layout_u6A21_u677F" class="headerlink" title="2、启用ejs的layout模板"></a>2、启用ejs的layout模板</h3><p>express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件</p>
-<h4 id="u5B89_u88C5express-partials"><a href="#u5B89_u88C5express-partials" class="headerlink" title="安装express-partials"></a>安装express-partials</h4><p>在package.json里面的dependencies中添加 <code>&quot;express-partials&quot; : &quot;*&quot;</code> 。然后再项目目录下运行<code>npm install</code></p>
-<h4 id="u5728_u9879_u76EE_u4E2D_u5F15_u7528express-partials"><a href="#u5728_u9879_u76EE_u4E2D_u5F15_u7528express-partials" class="headerlink" title="在项目中引用express-partials"></a>在项目中引用express-partials</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> partials = <span class="built_in">require</span>(<span class="string">'express-partials'</span>);</span><br><span class="line"><span class="comment">//在app.set('view engine', 'ejs'); 下面添加</span></span><br><span class="line">app.use(partials());</span><br></pre></td></tr></table></figure>
+        <h3 id="1、使用express命令初始化项目"><a href="#1、使用express命令初始化项目" class="headerlink" title="1、使用express命令初始化项目"></a>1、使用express命令初始化项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]</div></pre></td></tr></table></figure>
+<h3 id="2、启用ejs的layout模板"><a href="#2、启用ejs的layout模板" class="headerlink" title="2、启用ejs的layout模板"></a>2、启用ejs的layout模板</h3><p>express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件</p>
+<h4 id="安装express-partials"><a href="#安装express-partials" class="headerlink" title="安装express-partials"></a>安装express-partials</h4><p>在package.json里面的dependencies中添加 <code>&quot;express-partials&quot; : &quot;*&quot;</code> 。然后再项目目录下运行<code>npm install</code></p>
+<h4 id="在项目中引用express-partials"><a href="#在项目中引用express-partials" class="headerlink" title="在项目中引用express-partials"></a>在项目中引用express-partials</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> partials = <span class="built_in">require</span>(<span class="string">'express-partials'</span>);</div><div class="line"><span class="comment">//在app.set('view engine', 'ejs'); 下面添加</span></div><div class="line">app.use(partials());</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="3_u3001_u4F7F_u7528_u65B9_u6CD5"><a href="#3_u3001_u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="3、使用方法"></a>3、使用方法</h3><p>在需要引用模板的地方调用 layout:’模板名称’</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/reg'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123; </span><br><span class="line">    res.render(<span class="string">'reg'</span>, &#123; </span><br><span class="line">        title: <span class="string">'用户注册'</span>, </span><br><span class="line">        layout: <span class="string">'template'</span></span><br><span class="line">     &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="3、使用方法"><a href="#3、使用方法" class="headerlink" title="3、使用方法"></a>3、使用方法</h3><p>在需要引用模板的地方调用 layout:’模板名称’</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/reg'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123; </div><div class="line">    res.render(<span class="string">'reg'</span>, &#123; </div><div class="line">        <span class="attr">title</span>: <span class="string">'用户注册'</span>, </div><div class="line">        <span class="attr">layout</span>: <span class="string">'template'</span></div><div class="line">     &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -319,7 +325,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -335,8 +341,8 @@
 		open_in_new: false
 	}
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
 
 

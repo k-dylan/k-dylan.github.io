@@ -21,7 +21,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -206,7 +206,7 @@
         <p>最近打算把 <a href="https://github.com/k-dylan/easyclub/">EasyClub</a> 部署到vps上,由于以前一直都是在本地测试状态下,mongodb连接没有采用auth,为了部署启用auth折腾了大半天,现在记录下操作步骤.</p>
 <ol>
 <li><p>首先不加<code>-auth</code>参数,启动 mongoDB:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod <span class="operator">-f</span> ~/.mongodb.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod <span class="_">-f</span> ~/.mongodb.conf</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -270,8 +270,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="u4ECA_u5929_u628A_u81EA_u5DF1_u65B0_u4E70_u7684_u57DF_u540D_kdylan-me__u4E0EGithub_Pages_u8FDB_u884C_u4E86_u7ED1_u5B9A_uFF0C_u4EE5_u540E_u5C31_u53EF_u4EE5_u901A_u8FC7_kdylan-me__u6765_u8BBF_u95EE_u535A_u5BA2_u5566_uFF01_u4E0B_u9762_u8BB0_u5F55_u4E00_u4E0B_u7ED1_u5B9A_u7684_u8FC7_u7A0B"><a href="#u4ECA_u5929_u628A_u81EA_u5DF1_u65B0_u4E70_u7684_u57DF_u540D_kdylan-me__u4E0EGithub_Pages_u8FDB_u884C_u4E86_u7ED1_u5B9A_uFF0C_u4EE5_u540E_u5C31_u53EF_u4EE5_u901A_u8FC7_kdylan-me__u6765_u8BBF_u95EE_u535A_u5BA2_u5566_uFF01_u4E0B_u9762_u8BB0_u5F55_u4E00_u4E0B_u7ED1_u5B9A_u7684_u8FC7_u7A0B" class="headerlink" title="今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程"></a>今天把自己新买的域名 <code>kdylan.me</code> 与Github Pages进行了绑定，以后就可以通过 <a href="http://kdylan.me/">kdylan.me</a> 来访问博客啦！下面记录一下绑定的过程</h2><ol>
-<li>创建<code>CNAME</code>文件<br>在网站项目repo的根目录添加<code>CNAME</code>文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kdylan.<span class="keyword">me</span></span><br></pre></td></tr></table></figure>
+        <h2 id="今天把自己新买的域名-kdylan-me-与Github-Pages进行了绑定，以后就可以通过-kdylan-me-来访问博客啦！下面记录一下绑定的过程"><a href="#今天把自己新买的域名-kdylan-me-与Github-Pages进行了绑定，以后就可以通过-kdylan-me-来访问博客啦！下面记录一下绑定的过程" class="headerlink" title="今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程"></a>今天把自己新买的域名 <code>kdylan.me</code> 与Github Pages进行了绑定，以后就可以通过 <a href="http://kdylan.me/">kdylan.me</a> 来访问博客啦！下面记录一下绑定的过程</h2><ol>
+<li>创建<code>CNAME</code>文件<br>在网站项目repo的根目录添加<code>CNAME</code>文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kdylan.<span class="keyword">me</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <blockquote>
@@ -345,8 +345,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="u9700_u6C42"><a href="#u9700_u6C42" class="headerlink" title="需求"></a>需求</h2><p>在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的<code>gh-pages</code>分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到<code>gh-pages</code>分支中。这时就可以使用<code>git subtree</code> 功能</p>
-<h2 id="u4EC0_u4E48_u662F_git_subtree"><a href="#u4EC0_u4E48_u662F_git_subtree" class="headerlink" title="什么是 git subtree"></a>什么是 git subtree</h2><p><code>git subtree</code> 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就是：可以在一个项目中引用另外一个项目仓库中的代码<br>
+        <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的<code>gh-pages</code>分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到<code>gh-pages</code>分支中。这时就可以使用<code>git subtree</code> 功能</p>
+<h2 id="什么是-git-subtree"><a href="#什么是-git-subtree" class="headerlink" title="什么是 git subtree"></a>什么是 git subtree</h2><p><code>git subtree</code> 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就是：可以在一个项目中引用另外一个项目仓库中的代码<br>
       
     </div>
     
@@ -411,7 +411,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>现在单页面应用是越来越流行了，而路由则是这种程序的基础，比如<code>vue-router</code>、<code>angular-router</code>等路由组件，今天我们来实现一个简单的路由类。</p>
-<h2 id="u9700_u6C42"><a href="#u9700_u6C42" class="headerlink" title="需求"></a>需求</h2><ul>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
 <li>支持hashURL，例如：<a href="http://test.com#/path">http://test.com#/path</a>    </li>
 <li>兼容History Api
       
@@ -477,7 +477,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我们通常都是使用 <code>Element.offsetHeight</code> 来获取一个节点的宽和高度的，在一般的使用中是没什么问题的。但是，如果节点的 <code>display</code> 属性为 <code>none</code>话，就获取不到实际的宽高了，获取到的数据就是0；<br><iframe width="100%" height="300" src="http://jsfiddle.net/xyy7c7am/embedded/result,html,css,js/light" frameborder="0" allowfullscreen></iframe></p>
+        <p>我们通常都是使用 <code>Element.offsetHeight</code> 来获取一个节点的宽和高度的，在一般的使用中是没什么问题的。但是，如果节点的 <code>display</code> 属性为 <code>none</code>话，就获取不到实际的宽高了，获取到的数据就是0；<br><iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/xyy7c7am/embedded/result,html,css,js/light" frameborder="0" allowfullscreen></iframe></p>
 <blockquote>
 <p>那如何才能获取到实际的宽高呢？<br>
       
@@ -611,13 +611,13 @@
 <p>在写文章的时候，有个分类名开始起名为：<code>http</code>，后来感觉小写不好看，就给改成了大写<code>HTTP</code>，提交到github上之后就发现出问题了，http分类页面变成404了！</p>
 <p>经过排查问题发现github上的目录名为<code>http</code>，而分类请求的目录名为<code>HTTP</code>，而Github Pages是区分大小写的，所以造成找不到文件出现404错误！</p>
 <p>通过检查hexo生成的<code>.deploy_git</code>文件夹内的文件名是大写的，而使用<code>hexo d</code>提交到github上之后的目录还是小写，这是因为git默认是忽略大小写的！</p>
-<h3 id="u89E3_u51B3_u65B9_u6CD5"><a href="#u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
 <li>删除<code>.deploy_git</code>目录</li>
 <li>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</li>
 <li>打开github查看，问题解决！</li>
 </ol>
 <blockquote>
-<p>可以使用下面语句设置git大小写敏感，防止下次出现这样的问题：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<p>可以使用下面语句设置git大小写敏感，防止下次出现这样的问题：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config core.ignorecase <span class="literal">false</span></div></pre></td></tr></table></figure></p>
 </blockquote>
 
       
@@ -679,10 +679,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1_u3001_u4F7F_u7528express_u547D_u4EE4_u521D_u59CB_u5316_u9879_u76EE"><a href="#1_u3001_u4F7F_u7528express_u547D_u4EE4_u521D_u59CB_u5316_u9879_u76EE" class="headerlink" title="1、使用express命令初始化项目"></a>1、使用express命令初始化项目</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ express -e ejs [&#21518;&#38754;&#21487;&#20197;&#28155;&#21152;&#39033;&#30446;&#21517;&#31216;&#65292;&#28155;&#21152;&#30340;&#35805; &#20250;&#21019;&#24314;&#39033;&#30446;&#25991;&#20214;&#22841;&#65292;&#19981;&#28155;&#21152;&#23601;&#22312;&#24403;&#21069;&#25991;&#20214;&#22841;&#20869;]</span><br></pre></td></tr></table></figure>
-<h3 id="2_u3001_u542F_u7528ejs_u7684layout_u6A21_u677F"><a href="#2_u3001_u542F_u7528ejs_u7684layout_u6A21_u677F" class="headerlink" title="2、启用ejs的layout模板"></a>2、启用ejs的layout模板</h3><p>express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件</p>
-<h4 id="u5B89_u88C5express-partials"><a href="#u5B89_u88C5express-partials" class="headerlink" title="安装express-partials"></a>安装express-partials</h4><p>在package.json里面的dependencies中添加 <code>&quot;express-partials&quot; : &quot;*&quot;</code> 。然后再项目目录下运行<code>npm install</code></p>
-<h4 id="u5728_u9879_u76EE_u4E2D_u5F15_u7528express-partials"><a href="#u5728_u9879_u76EE_u4E2D_u5F15_u7528express-partials" class="headerlink" title="在项目中引用express-partials"></a>在项目中引用express-partials</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> partials = <span class="built_in">require</span>(<span class="string">'express-partials'</span>);</span><br><span class="line"><span class="comment">//在app.set('view engine', 'ejs'); 下面添加</span></span><br><span class="line">app.use(partials());</span><br></pre></td></tr></table></figure>
+        <h3 id="1、使用express命令初始化项目"><a href="#1、使用express命令初始化项目" class="headerlink" title="1、使用express命令初始化项目"></a>1、使用express命令初始化项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]</div></pre></td></tr></table></figure>
+<h3 id="2、启用ejs的layout模板"><a href="#2、启用ejs的layout模板" class="headerlink" title="2、启用ejs的layout模板"></a>2、启用ejs的layout模板</h3><p>express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件</p>
+<h4 id="安装express-partials"><a href="#安装express-partials" class="headerlink" title="安装express-partials"></a>安装express-partials</h4><p>在package.json里面的dependencies中添加 <code>&quot;express-partials&quot; : &quot;*&quot;</code> 。然后再项目目录下运行<code>npm install</code></p>
+<h4 id="在项目中引用express-partials"><a href="#在项目中引用express-partials" class="headerlink" title="在项目中引用express-partials"></a>在项目中引用express-partials</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> partials = <span class="built_in">require</span>(<span class="string">'express-partials'</span>);</div><div class="line"><span class="comment">//在app.set('view engine', 'ejs'); 下面添加</span></div><div class="line">app.use(partials());</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -749,8 +749,8 @@
         <blockquote>
 <p>osX系统是默认自带的有php和apache的 </p>
 </blockquote>
-<h2 id="1_u3001_u542F_u52A8Apache"><a href="#1_u3001_u542F_u52A8Apache" class="headerlink" title="1、启动Apache"></a>1、启动Apache</h2><p>打开终端：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开启apache命令：sudo apachectl start</span><br><span class="line">关闭apache命令：sudo apachectl stop</span><br><span class="line">重启apache命令：sudo apachectl restart</span><br></pre></td></tr></table></figure>
+<h2 id="1、启动Apache"><a href="#1、启动Apache" class="headerlink" title="1、启动Apache"></a>1、启动Apache</h2><p>打开终端：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">开启apache命令：sudo apachectl start</div><div class="line">关闭apache命令：sudo apachectl stop</div><div class="line">重启apache命令：sudo apachectl restart</div></pre></td></tr></table></figure>
 <p>启用apache后，可以直接在浏览器访问<code>http://localhost</code>，出现“<code>It works！</code>”表示运行正常。</p>
 <ol>
 <li><p>用户级的根目录是：<code>~Sites</code>，也就是站点目录。在 OS X Mountain Lion 中，这个目录可能没有，所以你需要手动建立一个同名目录。建立方式很简单，直接在终端中运行：<code>sudo mkdir Sites</code></p>
@@ -759,7 +759,7 @@
 </li>
 </ol>
 <p>如果没有，那么你需要创建一个，取名为“<code>dylan.conf</code>”，可以使用 vi 或者 nano 这两种编辑器之一来创建。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/apache2/users/haibor.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apache2/users/haibor.conf</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -883,7 +883,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -899,8 +899,8 @@
 		open_in_new: false
 	}
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
 
 
