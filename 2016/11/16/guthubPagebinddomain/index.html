@@ -346,20 +346,22 @@
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+  
+  <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script>
-var gitment = new Gitment({
-  id: "为github Pages绑定顶级域名",
-  owner: 'k-dylan',
-  repo: 'k-dylan.github.io',
-  oauth: {
-    client_id: '3a58000540b4435e34eb',
-    client_secret: 'b07ca23885cfca4f6130f7d92d3ef38cd0eba2ab',
-  },
-})
-gitment.render('gitment-ctn')
+  var gitalk = new Gitalk({
+    clientID:  '3a58000540b4435e34eb',
+    clientSecret: 'b07ca23885cfca4f6130f7d92d3ef38cd0eba2ab',
+    repo: 'k-dylan.github.io',
+    id: window.location.pathname,
+    owner: 'k-dylan',
+    admin: '',
+    distractionFreeMode: 'true',
+  })
+  gitalk.render('gitalk-container')
 </script>
   
 
@@ -466,11 +468,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Node</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
