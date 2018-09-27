@@ -73,9 +73,10 @@
     <link href="http://kdylan.me/2016/11/16/guthubPagebinddomain/"/>
     <id>http://kdylan.me/2016/11/16/guthubPagebinddomain/</id>
     <published>2016-11-15T16:13:53.000Z</published>
-    <updated>2016-11-15T04:05:19.000Z</updated>
+    <updated>2018-09-27T12:23:29.633Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="今天把自己新买的域名-kdylan-me-与Github-Pages进行了绑定，以后就可以通过-kdylan-me-来访问博客啦！下面记录一下绑定的过程"><a href="#今天把自己新买的域名-kdylan-me-与Github-Pages进行了绑定，以后就可以通过-kdylan-me-来访问博客啦！下面记录一下绑定的过程" class="headerlink" title="今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程"></a>今天把自己新买的域名 <code>kdylan.me</code> 与Github Pages进行了绑定，以后就可以通过 <a href="http://kdylan.me/">kdylan.me</a> 来访问博客啦！下面记录一下绑定的过程</h2><ol>
+    <content type="html"><![CDATA[<p>今天把自己新买的域名 <code>kdylan.me</code> 与Github Pages进行了绑定，以后就可以通过 <a href="http://kdylan.me/">kdylan.me</a> 来访问博客啦！下面记录一下绑定的过程</p>
+<ol>
 <li>创建<code>CNAME</code>文件<br>在网站项目repo的根目录添加<code>CNAME</code>文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kdylan.<span class="keyword">me</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -94,7 +95,9 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;今天把自己新买的域名-kdylan-me-与Github-Pages进行了绑定，以后就可以通过-kdylan-me-来访问博客啦！下面记录一下绑定的过程&quot;&gt;&lt;a href=&quot;#今天把自己新买的域名-kdylan-me-与Github-Pages进行了绑定，以后就可
+      &lt;p&gt;今天把自己新买的域名 &lt;code&gt;kdylan.me&lt;/code&gt; 与Github Pages进行了绑定，以后就可以通过 &lt;a href=&quot;http://kdylan.me/&quot;&gt;kdylan.me&lt;/a&gt; 来访问博客啦！下面记录一下绑定的过程&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;创建
     
     </summary>
     
