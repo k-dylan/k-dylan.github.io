@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kdylan.me/"/>
-  <updated>2016-12-13T04:14:01.000Z</updated>
+  <updated>2018-09-27T12:41:58.686Z</updated>
   <id>http://kdylan.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://kdylan.me/2016/12/11/mongodb-auth/"/>
     <id>http://kdylan.me/2016/12/11/mongodb-auth/</id>
     <published>2016-12-11T04:13:53.000Z</published>
-    <updated>2016-12-13T04:14:01.000Z</updated>
+    <updated>2018-09-27T12:41:58.686Z</updated>
     
     <content type="html"><![CDATA[<p>最近打算把 <a href="https://github.com/k-dylan/easyclub/" target="_blank" rel="external">EasyClub</a> 部署到vps上,由于以前一直都是在本地测试状态下,mongodb连接没有采用auth,为了部署启用auth折腾了大半天,现在记录下操作步骤.</p>
 <ol>
