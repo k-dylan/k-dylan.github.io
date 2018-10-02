@@ -6,24 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://kdylan.me">
-  <title>express中使用ejs | Dylan&#39;s Blog</title>
+  <title>CSS3中使用transition过渡动画高度自适应的问题 | Dylan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、使用express命令初始化项目1$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]
-2、启用ejs的layout模板express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件
-安装express-partials在package.json里面的dependencies中添加 &amp;quot;expres">
+  <meta name="description" content="最近在做一个项目的时候，需要为一个列表添加个slideDown的动画，容器的高度是不确定的，如果用jquery实现的话很简单：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="express中使用ejs">
-<meta property="og:url" content="https://kdylan.me/2016/02/17/express-ejs/index.html">
+<meta property="og:title" content="CSS3中使用transition过渡动画高度自适应的问题">
+<meta property="og:url" content="https://kdylan.me/2016/05/01/cjmr7kjsz0001aktcawxx8llt/index.html">
 <meta property="og:site_name" content="Dylan's Blog">
-<meta property="og:description" content="1、使用express命令初始化项目1$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]
-2、启用ejs的layout模板express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件
-安装express-partials在package.json里面的dependencies中添加 &amp;quot;expres">
-<meta property="og:updated_time" content="2016-02-19T15:49:57.000Z">
+<meta property="og:description" content="最近在做一个项目的时候，需要为一个列表添加个slideDown的动画，容器的高度是不确定的，如果用jquery实现的话很简单：">
+<meta property="og:updated_time" content="2016-05-01T14:36:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="express中使用ejs">
-<meta name="twitter:description" content="1、使用express命令初始化项目1$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]
-2、启用ejs的layout模板express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件
-安装express-partials在package.json里面的dependencies中添加 &amp;quot;expres">
+<meta name="twitter:title" content="CSS3中使用transition过渡动画高度自适应的问题">
+<meta name="twitter:description" content="最近在做一个项目的时候，需要为一个列表添加个slideDown的动画，容器的高度是不确定的，如果用jquery实现的话很简单：">
   
     <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
   
@@ -159,33 +153,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-express-ejs" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-css-transition-auto" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      express中使用ejs
+      CSS3中使用transition过渡动画高度自适应的问题
     </h1>
   
 
         
-        <a href="/2016/02/17/express-ejs/" class="archive-article-date">
-  	<time datetime="2016-02-16T16:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-17</time>
+        <a href="/2016/05/01/cjmr7kjsz0001aktcawxx8llt/" class="archive-article-date">
+  	<time datetime="2016-05-01T03:19:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、使用express命令初始化项目"><a href="#1、使用express命令初始化项目" class="headerlink" title="1、使用express命令初始化项目"></a>1、使用express命令初始化项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]</div></pre></td></tr></table></figure>
-<h3 id="2、启用ejs的layout模板"><a href="#2、启用ejs的layout模板" class="headerlink" title="2、启用ejs的layout模板"></a>2、启用ejs的layout模板</h3><p>express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件</p>
-<h4 id="安装express-partials"><a href="#安装express-partials" class="headerlink" title="安装express-partials"></a>安装express-partials</h4><p>在package.json里面的dependencies中添加 <code>&quot;express-partials&quot; : &quot;*&quot;</code> 。然后再项目目录下运行<code>npm install</code></p>
-<h4 id="在项目中引用express-partials"><a href="#在项目中引用express-partials" class="headerlink" title="在项目中引用express-partials"></a>在项目中引用express-partials</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> partials = <span class="built_in">require</span>(<span class="string">'express-partials'</span>);</div><div class="line"><span class="comment">//在app.set('view engine', 'ejs'); 下面添加</span></div><div class="line">app.use(partials());</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="3、使用方法"><a href="#3、使用方法" class="headerlink" title="3、使用方法"></a>3、使用方法</h3><p>在需要引用模板的地方调用 layout:’模板名称’</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/reg'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123; </div><div class="line">    res.render(<span class="string">'reg'</span>, &#123; </div><div class="line">        <span class="attr">title</span>: <span class="string">'用户注册'</span>, </div><div class="line">        <span class="attr">layout</span>: <span class="string">'template'</span></div><div class="line">     &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+        <p>最近在做一个项目的时候，需要为一个列表添加个slideDown的动画，容器的高度是不确定的，如果用jquery实现的话很简单：<br><a id="more"></a><br><iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/dhwfmbmx/embedded/result,html,css,js/light" frameborder="0" allowfullscreen></iframe></p>
+<p>而用CSS3实现的话，由于高度的不确定，而 <code>transtion</code> 是需要具体的树枝，所以设置 <code>height:auto</code> 是无法实现效果的，可以通过 <code>max-height</code> 这个属性间接的实现这么个效果，css样式是这样的：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.bd</span> &#123; </div><div class="line">    <span class="attribute">display</span>:none;</div><div class="line">    <span class="attribute">max-height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">overflow</span>:hidden;</div><div class="line">    <span class="attribute">transition</span>: all .<span class="number">6s</span> ease-out;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.show</span> &#123;</div><div class="line">    <span class="attribute">max-height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">transition-timing-function</span>: ease-in;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>具体效果：<br><iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/w1mw829k/embedded/result,html,css,js/light" frameborder="0" allowfullscreen></iframe></p>
 
       
 
@@ -199,7 +190,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Node</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
         		</li>
       		
 		</ul>
@@ -211,7 +206,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Node//" class="article-tag-list-link color5">Node</a>
+        			<a href="/categories/css//" class="article-tag-list-link color4">css</a>
         		</li>
       		
 		</ul>
@@ -266,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://kdylan.me/2016/02/17/express-ejs/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://kdylan.me/2016/05/01/cjmr7kjsz0001aktcawxx8llt/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +275,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/02/19/hexo-deploy-low-dir/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/05/02/cjmr7kjt10003aktciyuzg992/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Hexo部署到Github上文件夹的大小写问题
+          js获取隐藏元素的实际宽和高
         
       </div>
     </a>
   
   
-    <a href="/2016/02/15/mac+apache+php/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mac下Apache和php的配置</div>
+    <a href="/2016/02/19/cjmr7kjt30006aktc8m8mdyzx/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo部署到Github上文件夹的大小写问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -439,11 +434,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">url</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">url</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,15 +446,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -480,6 +471,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
             
             <div class="clearfix"></div>

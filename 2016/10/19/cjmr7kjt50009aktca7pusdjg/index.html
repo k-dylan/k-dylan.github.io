@@ -6,36 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://kdylan.me">
-  <title>为github Pages绑定顶级域名 | Dylan&#39;s Blog</title>
+  <title>将项目web目录部署到gh-pages分支 | Dylan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程
-
-创建CNAME文件在网站项目repo的根目录添加CNAME文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；1kdylan.me
-
-
-
-由于是本站是采用 hexo 搭建而成，如果直接在github网页中添加此文件">
+  <meta name="description" content="需求在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的gh-pages分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到gh-pages分支中。这时就可以使用git subtree 功能
+什么是 git subtreegit subtree 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为github Pages绑定顶级域名">
-<meta property="og:url" content="https://kdylan.me/2016/11/16/guthubPagebinddomain/index.html">
+<meta property="og:title" content="将项目web目录部署到gh-pages分支">
+<meta property="og:url" content="https://kdylan.me/2016/10/19/cjmr7kjt50009aktca7pusdjg/index.html">
 <meta property="og:site_name" content="Dylan's Blog">
-<meta property="og:description" content="今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程
-
-创建CNAME文件在网站项目repo的根目录添加CNAME文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；1kdylan.me
-
-
-
-由于是本站是采用 hexo 搭建而成，如果直接在github网页中添加此文件">
-<meta property="og:updated_time" content="2018-09-27T12:42:45.393Z">
+<meta property="og:description" content="需求在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的gh-pages分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到gh-pages分支中。这时就可以使用git subtree 功能
+什么是 git subtreegit subtree 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就">
+<meta property="og:updated_time" content="2016-10-19T13:45:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为github Pages绑定顶级域名">
-<meta name="twitter:description" content="今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程
-
-创建CNAME文件在网站项目repo的根目录添加CNAME文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；1kdylan.me
-
-
-
-由于是本站是采用 hexo 搭建而成，如果直接在github网页中添加此文件">
+<meta name="twitter:title" content="将项目web目录部署到gh-pages分支">
+<meta name="twitter:description" content="需求在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的gh-pages分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到gh-pages分支中。这时就可以使用git subtree 功能
+什么是 git subtreegit subtree 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就">
   
     <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
   
@@ -171,42 +156,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-guthubPagebinddomain" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-subfolder-githubPages" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      为github Pages绑定顶级域名
+      将项目web目录部署到gh-pages分支
     </h1>
   
 
         
-        <a href="/2016/11/16/guthubPagebinddomain/" class="archive-article-date">
-  	<time datetime="2016-11-15T16:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
+        <a href="/2016/10/19/cjmr7kjt50009aktca7pusdjg/" class="archive-article-date">
+  	<time datetime="2016-10-19T05:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天把自己新买的域名 <code>kdylan.me</code> 与Github Pages进行了绑定，以后就可以通过 <a href="http://kdylan.me/">kdylan.me</a> 来访问博客啦！下面记录一下绑定的过程</p>
-<ol>
-<li>创建<code>CNAME</code>文件<br>在网站项目repo的根目录添加<code>CNAME</code>文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kdylan.<span class="keyword">me</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>由于是本站是采用 <code>hexo</code> 搭建而成，如果直接在github网页中添加此文件，那么下次<code>hexo g -d</code>的时候就会删除此文件，所以要把该文件创建到项目的<code>source</code>文件夹根目录，那么下次<code>hexo g -d</code>的时候，就会把该文件也生成到<code>repo</code>中；</p>
-</blockquote>
-<ol>
-<li>添加域名解析 </li>
-</ol>
-<ul>
-<li>首先获取域名IP，打开电脑命令行，输入<code>ping k-dylan.github.io</code> 得到IP；</li>
-<li>在域名管理中添加两个A解析分别是<code>@</code>和<code>www</code>,IP地址填刚刚查询到的IP</li>
-</ul>
-<p>最后等域名解析完成后就可以使用顶级域名访问网站啦！！</p>
+        <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的<code>gh-pages</code>分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到<code>gh-pages</code>分支中。这时就可以使用<code>git subtree</code> 功能</p>
+<h2 id="什么是-git-subtree"><a href="#什么是-git-subtree" class="headerlink" title="什么是 git subtree"></a>什么是 git subtree</h2><p><code>git subtree</code> 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就是：可以在一个项目中引用另外一个项目仓库中的代码<br><a id="more"></a></p>
+<h2 id="git-subtree-如何使用"><a href="#git-subtree-如何使用" class="headerlink" title="git subtree 如何使用"></a>git subtree 如何使用</h2><p>初始化子项目<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git subtree add --prefix=用来存放子项目的文件夹 子项目库地址 分支</div><div class="line">// 运行后会自动把子项目分支中的代码下载到指定的文件夹中</div></pre></td></tr></table></figure></p>
+<p>提交更改到子项目<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git subtree push --prefix=用来存放子项目的文件夹 子项目库地址 分支</div></pre></td></tr></table></figure></p>
+<p>更新子项目新的代码到父项目<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git subtree pull --prefix=用来存放子项目的文件夹 子项目库地址 分支</div></pre></td></tr></table></figure></p>
+<h2 id="部署-gh-pages-分支"><a href="#部署-gh-pages-分支" class="headerlink" title="部署 gh-pages 分支"></a>部署 gh-pages 分支</h2><p>看到这里，应该明白怎么做了吧，只要把<code>gh-pages</code>分支当做一个子项目，运行以下命令，就可以把web目录单独部署到<code>gh-pages</code>分支啦<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git subtree push --prefix dist origin gh-pages</div></pre></td></tr></table></figure></p>
 
       
 
@@ -220,7 +195,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -232,7 +207,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Node//" class="article-tag-list-link color5">Node</a>
+        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -287,7 +262,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://kdylan.me/2016/11/16/guthubPagebinddomain/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://kdylan.me/2016/10/19/cjmr7kjt50009aktca7pusdjg/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -301,18 +276,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/12/11/mongodb-auth/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/16/cjmr7kjt20005aktcwa23rgy3/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          mongoDB 用户权限控制
+          为github Pages绑定顶级域名
         
       </div>
     </a>
   
   
-    <a href="/2016/10/19/subfolder-githubPages/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">将项目web目录部署到gh-pages分支</div>
+    <a href="/2016/05/21/cjmr7kjt20004aktc5vbvpd3t/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于hash和pushState的网页前端路由实现</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -460,11 +435,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">url</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">url</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,15 +447,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -501,6 +472,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
             
             <div class="clearfix"></div>

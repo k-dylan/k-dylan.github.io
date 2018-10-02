@@ -6,27 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://kdylan.me">
-  <title>Hexo部署到Github上文件夹的大小写问题 | Dylan&#39;s Blog</title>
+  <title>为github Pages绑定顶级域名 | Dylan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在倒腾使用hexo在github上搭建个博客，发现一个挺有意思的问题：
-在写文章的时候，有个分类名开始起名为：http，后来感觉小写不好看，就给改成了大写HTTP，提交到github上之后就发现出问题了，http分类页面变成404了！
-经过排查问题发现github上的目录名为http，而分类请求的目录名为HTTP，而Github Pages是区分大小写的，所以造成找不到文件出现404错误！
-通">
+  <meta name="description" content="今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程
+
+创建CNAME文件在网站项目repo的根目录添加CNAME文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；1kdylan.me
+
+
+
+由于是本站是采用 hexo 搭建而成，如果直接在github网页中添加此文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo部署到Github上文件夹的大小写问题">
-<meta property="og:url" content="https://kdylan.me/2016/02/19/hexo-deploy-low-dir/index.html">
+<meta property="og:title" content="为github Pages绑定顶级域名">
+<meta property="og:url" content="https://kdylan.me/2016/11/16/cjmr7kjt20005aktcwa23rgy3/index.html">
 <meta property="og:site_name" content="Dylan's Blog">
-<meta property="og:description" content="最近在倒腾使用hexo在github上搭建个博客，发现一个挺有意思的问题：
-在写文章的时候，有个分类名开始起名为：http，后来感觉小写不好看，就给改成了大写HTTP，提交到github上之后就发现出问题了，http分类页面变成404了！
-经过排查问题发现github上的目录名为http，而分类请求的目录名为HTTP，而Github Pages是区分大小写的，所以造成找不到文件出现404错误！
-通">
-<meta property="og:updated_time" content="2016-02-19T16:21:00.000Z">
+<meta property="og:description" content="今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程
+
+创建CNAME文件在网站项目repo的根目录添加CNAME文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；1kdylan.me
+
+
+
+由于是本站是采用 hexo 搭建而成，如果直接在github网页中添加此文件">
+<meta property="og:updated_time" content="2018-09-27T12:42:45.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo部署到Github上文件夹的大小写问题">
-<meta name="twitter:description" content="最近在倒腾使用hexo在github上搭建个博客，发现一个挺有意思的问题：
-在写文章的时候，有个分类名开始起名为：http，后来感觉小写不好看，就给改成了大写HTTP，提交到github上之后就发现出问题了，http分类页面变成404了！
-经过排查问题发现github上的目录名为http，而分类请求的目录名为HTTP，而Github Pages是区分大小写的，所以造成找不到文件出现404错误！
-通">
+<meta name="twitter:title" content="为github Pages绑定顶级域名">
+<meta name="twitter:description" content="今天把自己新买的域名 kdylan.me 与Github Pages进行了绑定，以后就可以通过 kdylan.me 来访问博客啦！下面记录一下绑定的过程
+
+创建CNAME文件在网站项目repo的根目录添加CNAME文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；1kdylan.me
+
+
+
+由于是本站是采用 hexo 搭建而成，如果直接在github网页中添加此文件">
   
     <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
   
@@ -162,38 +171,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo-deploy-low-dir" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-guthubPagebinddomain" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo部署到Github上文件夹的大小写问题
+      为github Pages绑定顶级域名
     </h1>
   
 
         
-        <a href="/2016/02/19/hexo-deploy-low-dir/" class="archive-article-date">
-  	<time datetime="2016-02-19T15:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-19</time>
+        <a href="/2016/11/16/cjmr7kjt20005aktcwa23rgy3/" class="archive-article-date">
+  	<time datetime="2016-11-15T16:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近在倒腾使用<code>hexo</code>在github上搭建个博客，发现一个挺有意思的问题：</p>
-<p>在写文章的时候，有个分类名开始起名为：<code>http</code>，后来感觉小写不好看，就给改成了大写<code>HTTP</code>，提交到github上之后就发现出问题了，http分类页面变成404了！</p>
-<p>经过排查问题发现github上的目录名为<code>http</code>，而分类请求的目录名为<code>HTTP</code>，而Github Pages是区分大小写的，所以造成找不到文件出现404错误！</p>
-<p>通过检查hexo生成的<code>.deploy_git</code>文件夹内的文件名是大写的，而使用<code>hexo d</code>提交到github上之后的目录还是小写，这是因为git默认是忽略大小写的！</p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
-<li>删除<code>.deploy_git</code>目录</li>
-<li>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</li>
-<li>打开github查看，问题解决！</li>
+        <p>今天把自己新买的域名 <code>kdylan.me</code> 与Github Pages进行了绑定，以后就可以通过 <a href="http://kdylan.me/">kdylan.me</a> 来访问博客啦！下面记录一下绑定的过程</p>
+<ol>
+<li>创建<code>CNAME</code>文件<br>在网站项目repo的根目录添加<code>CNAME</code>文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kdylan.<span class="keyword">me</span></div></pre></td></tr></table></figure>
+</li>
 </ol>
 <blockquote>
-<p>可以使用下面语句设置git大小写敏感，防止下次出现这样的问题：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config core.ignorecase <span class="literal">false</span></div></pre></td></tr></table></figure></p>
+<p>由于是本站是采用 <code>hexo</code> 搭建而成，如果直接在github网页中添加此文件，那么下次<code>hexo g -d</code>的时候就会删除此文件，所以要把该文件创建到项目的<code>source</code>文件夹根目录，那么下次<code>hexo g -d</code>的时候，就会把该文件也生成到<code>repo</code>中；</p>
 </blockquote>
+<ol>
+<li>添加域名解析 </li>
+</ol>
+<ul>
+<li>首先获取域名IP，打开电脑命令行，输入<code>ping k-dylan.github.io</code> 得到IP；</li>
+<li>在域名管理中添加两个A解析分别是<code>@</code>和<code>www</code>,IP地址填刚刚查询到的IP</li>
+</ul>
+<p>最后等域名解析完成后就可以使用顶级域名访问网站啦！！</p>
 
       
 
@@ -207,7 +220,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
         		</li>
       		
 		</ul>
@@ -274,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://kdylan.me/2016/02/19/hexo-deploy-low-dir/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://kdylan.me/2016/11/16/cjmr7kjt20005aktcwa23rgy3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -288,18 +301,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/05/01/css-transition-auto/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/12/11/cjmr7kjt40008aktc1y9lgdfj/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CSS3中使用transition过渡动画高度自适应的问题
+          mongoDB 用户权限控制
         
       </div>
     </a>
   
   
-    <a href="/2016/02/17/express-ejs/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">express中使用ejs</div>
+    <a href="/2016/10/19/cjmr7kjt50009aktca7pusdjg/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">将项目web目录部署到gh-pages分支</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -447,11 +460,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">url</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">url</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,15 +472,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,6 +497,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
             
             <div class="clearfix"></div>

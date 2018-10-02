@@ -6,21 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://kdylan.me">
-  <title>将项目web目录部署到gh-pages分支 | Dylan&#39;s Blog</title>
+  <title>URI和URL的区别 | Dylan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="需求在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的gh-pages分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到gh-pages分支中。这时就可以使用git subtree 功能
-什么是 git subtreegit subtree 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就">
+  <meta name="description" content="URI：是uniform resource identifier，统一资源标识符，用来唯一的标识一个资源；
+URL: 是uniform resource locator，统一资源定位器，它是一种具体的URI；
+
+URL可以用来标识一个资源，而且还指明如何如何locator这个资源。URI是一种抽象的，更高层次的概念定义统一资源标识，而URL则是具体的资源标识方式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="将项目web目录部署到gh-pages分支">
-<meta property="og:url" content="https://kdylan.me/2016/10/19/subfolder-githubPages/index.html">
+<meta property="og:title" content="URI和URL的区别">
+<meta property="og:url" content="https://kdylan.me/2016/02/07/cjmr7kjsv0000aktcz7mvtn2i/index.html">
 <meta property="og:site_name" content="Dylan's Blog">
-<meta property="og:description" content="需求在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的gh-pages分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到gh-pages分支中。这时就可以使用git subtree 功能
-什么是 git subtreegit subtree 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就">
-<meta property="og:updated_time" content="2016-10-19T13:45:04.000Z">
+<meta property="og:description" content="URI：是uniform resource identifier，统一资源标识符，用来唯一的标识一个资源；
+URL: 是uniform resource locator，统一资源定位器，它是一种具体的URI；
+
+URL可以用来标识一个资源，而且还指明如何如何locator这个资源。URI是一种抽象的，更高层次的概念定义统一资源标识，而URL则是具体的资源标识方式">
+<meta property="og:updated_time" content="2016-02-19T15:50:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="将项目web目录部署到gh-pages分支">
-<meta name="twitter:description" content="需求在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的gh-pages分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到gh-pages分支中。这时就可以使用git subtree 功能
-什么是 git subtreegit subtree 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就">
+<meta name="twitter:title" content="URI和URL的区别">
+<meta name="twitter:description" content="URI：是uniform resource identifier，统一资源标识符，用来唯一的标识一个资源；
+URL: 是uniform resource locator，统一资源定位器，它是一种具体的URI；
+
+URL可以用来标识一个资源，而且还指明如何如何locator这个资源。URI是一种抽象的，更高层次的概念定义统一资源标识，而URL则是具体的资源标识方式">
   
     <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
   
@@ -156,32 +162,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-subfolder-githubPages" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-URI和URL的区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      将项目web目录部署到gh-pages分支
+      URI和URL的区别
     </h1>
   
 
         
-        <a href="/2016/10/19/subfolder-githubPages/" class="archive-article-date">
-  	<time datetime="2016-10-19T05:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-19</time>
+        <a href="/2016/02/07/cjmr7kjsv0000aktcz7mvtn2i/" class="archive-article-date">
+  	<time datetime="2016-02-07T03:19:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的<code>gh-pages</code>分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到<code>gh-pages</code>分支中。这时就可以使用<code>git subtree</code> 功能</p>
-<h2 id="什么是-git-subtree"><a href="#什么是-git-subtree" class="headerlink" title="什么是 git subtree"></a>什么是 git subtree</h2><p><code>git subtree</code> 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就是：可以在一个项目中引用另外一个项目仓库中的代码<br><a id="more"></a></p>
-<h2 id="git-subtree-如何使用"><a href="#git-subtree-如何使用" class="headerlink" title="git subtree 如何使用"></a>git subtree 如何使用</h2><p>初始化子项目<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git subtree add --prefix=用来存放子项目的文件夹 子项目库地址 分支</div><div class="line">// 运行后会自动把子项目分支中的代码下载到指定的文件夹中</div></pre></td></tr></table></figure></p>
-<p>提交更改到子项目<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git subtree push --prefix=用来存放子项目的文件夹 子项目库地址 分支</div></pre></td></tr></table></figure></p>
-<p>更新子项目新的代码到父项目<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git subtree pull --prefix=用来存放子项目的文件夹 子项目库地址 分支</div></pre></td></tr></table></figure></p>
-<h2 id="部署-gh-pages-分支"><a href="#部署-gh-pages-分支" class="headerlink" title="部署 gh-pages 分支"></a>部署 gh-pages 分支</h2><p>看到这里，应该明白怎么做了吧，只要把<code>gh-pages</code>分支当做一个子项目，运行以下命令，就可以把web目录单独部署到<code>gh-pages</code>分支啦<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git subtree push --prefix dist origin gh-pages</div></pre></td></tr></table></figure></p>
+        <p>URI：是<code>uniform resource identifier</code>，统一资源标识符，用来唯一的标识一个资源；</p>
+<p>URL: 是<code>uniform resource locator</code>，统一资源定位器，它是一种具体的URI；</p>
+<blockquote>
+<p>URL可以用来标识一个资源，而且还指明如何如何locator这个资源。<br>URI是一种抽象的，更高层次的概念定义统一资源标识，而URL则是具体的资源标识方式</p>
+</blockquote>
 
       
 
@@ -195,7 +200,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">url</a>
         		</li>
       		
 		</ul>
@@ -207,7 +216,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        			<a href="/categories/HTTP//" class="article-tag-list-link color5">HTTP</a>
         		</li>
       		
 		</ul>
@@ -262,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://kdylan.me/2016/10/19/subfolder-githubPages/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://kdylan.me/2016/02/07/cjmr7kjsv0000aktcz7mvtn2i/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,20 +285,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/11/16/guthubPagebinddomain/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/02/15/cjmr7kjt40007aktc07uamucc/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          为github Pages绑定顶级域名
+          Mac下Apache和php的配置
         
       </div>
     </a>
   
-  
-    <a href="/2016/05/21/hash-router/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于hash和pushState的网页前端路由实现</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -435,11 +439,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">url</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">url</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -447,15 +451,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -476,6 +476,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
             
             <div class="clearfix"></div>
