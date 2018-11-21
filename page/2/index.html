@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://kdylan.me">
   <title>Dylan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Dylan的博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dylan's Blog">
+<meta property="og:title" content="Dylan&#39;s Blog">
 <meta property="og:url" content="https://kdylan.me/page/2/index.html">
-<meta property="og:site_name" content="Dylan's Blog">
+<meta property="og:site_name" content="Dylan&#39;s Blog">
 <meta property="og:description" content="Dylan的博客">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dylan's Blog">
+<meta name="twitter:title" content="Dylan&#39;s Blog">
 <meta name="twitter:description" content="Dylan的博客">
   
     <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
@@ -35,7 +36,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -154,19 +155,123 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-URI和URL的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-mac+apache+php" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/07/cjmr7kjsv0000aktcz7mvtn2i/">URI和URL的区别</a>
+      <a class="article-title" href="/2016/02/15/cjor24cg3000ew9tcriphqzt9/">Mac下Apache和php的配置</a>
     </h1>
   
 
         
-        <a href="/2016/02/07/cjmr7kjsv0000aktcz7mvtn2i/" class="archive-article-date">
+        <a href="/2016/02/15/cjor24cg3000ew9tcriphqzt9/" class="archive-article-date">
+  	<time datetime="2016-02-15T03:19:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>osX系统是默认自带的有php和apache的 </p>
+</blockquote>
+<h2 id="1、启动Apache"><a href="#1、启动Apache" class="headerlink" title="1、启动Apache"></a>1、启动Apache</h2><p>打开终端：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开启apache命令：sudo apachectl start</span><br><span class="line">关闭apache命令：sudo apachectl stop</span><br><span class="line">重启apache命令：sudo apachectl restart</span><br></pre></td></tr></table></figure>
+<p>启用apache后，可以直接在浏览器访问<code>http://localhost</code>，出现“<code>It works！</code>”表示运行正常。</p>
+<ol start="3">
+<li><p>用户级的根目录是：<code>~Sites</code>，也就是站点目录。在 OS X Mountain Lion 中，这个目录可能没有，所以你需要手动建立一个同名目录。建立方式很简单，直接在终端中运行：<code>sudo mkdir Sites</code></p>
+</li>
+<li><p>建立”站点”文件夹之后，检查下面这个文件夹下面是不是有”<code>你的用户名.conf</code>”这个文件。</p>
+</li>
+</ol>
+<p>如果没有，那么你需要创建一个，取名为“<code>dylan.conf</code>”，可以使用 vi 或者 nano 这两种编辑器之一来创建。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/apache2/users/haibor.conf</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2016/02/15/cjor24cg3000ew9tcriphqzt9/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mac</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/PHP//" class="article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/02/15/cjor24cg3000ew9tcriphqzt9/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-URI和URL的区别" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/07/cjor24cfm0000w9tc2sdn3bi0/">URI和URL的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2016/02/07/cjor24cfm0000w9tc2sdn3bi0/" class="archive-article-date">
   	<time datetime="2016-02-07T03:19:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-07</time>
 </a>
         
@@ -217,7 +322,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/07/cjmr7kjsv0000aktcz7mvtn2i/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/02/07/cjor24cfm0000w9tc2sdn3bi0/">展开全文 >></a>
         </p>
       
 
@@ -393,13 +498,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue源码解析</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://kdylan.me">
   <title>Dylan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Dylan的博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dylan's Blog">
+<meta property="og:title" content="Dylan&#39;s Blog">
 <meta property="og:url" content="https://kdylan.me/index.html">
-<meta property="og:site_name" content="Dylan's Blog">
+<meta property="og:site_name" content="Dylan&#39;s Blog">
 <meta property="og:description" content="Dylan的博客">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dylan's Blog">
+<meta name="twitter:title" content="Dylan&#39;s Blog">
 <meta name="twitter:description" content="Dylan的博客">
   
     <link rel="alternative" href="/atom.xml" title="Dylan&#39;s Blog" type="application/atom+xml">
@@ -35,7 +36,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -154,19 +155,109 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-window下使用Docker部署前端开发环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue源码学习：入口文件" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/01/cjmr7kjt7000aaktc0xdieewq/">window下使用Docker部署前端开发环境</a>
+      <a class="article-title" href="/2018/11/21/cjor295ib0000wvtct5ltws6z/">vue源码学习：入口文件</a>
     </h1>
   
 
         
-        <a href="/2018/10/01/cjmr7kjt7000aaktc0xdieewq/" class="archive-article-date">
+        <a href="/2018/11/21/cjor295ib0000wvtct5ltws6z/" class="archive-article-date">
+  	<time datetime="2018-11-21T10:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue-项目结构"><a href="#vue-项目结构" class="headerlink" title="vue 项目结构"></a>vue 项目结构</h1><p>vue的源码都在src目录下，基本结构如下：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line">├── compiler        # 编译相关 </span><br><span class="line">├── core            # 核心代码 </span><br><span class="line">├── platforms       # 多平台支持</span><br><span class="line">├──<span class="built_in"> server </span>         # 服务端渲染</span><br><span class="line">├── sfc             # .vue 文件解析</span><br><span class="line">├── shared          # 共享工具库</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>core 文件夹是项目的核心，包含全局API、虚拟DOM、Vue实例化、内置组件、生命周期、observer(观察者)等模块；</li>
+<li>platforms 由于vue是支持多平台的，该文件夹主要存放项目在各个平台下的入口文件；
+        
+          <a class="article-more-a" href="/2018/11/21/cjor295ib0000wvtct5ltws6z/#more">more >></a>
+        
+      
+
+      
+    </li></ul></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue源码解析</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习记录//" class="article-tag-list-link color5">学习记录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/21/cjor295ib0000wvtct5ltws6z/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-window下使用Docker部署前端开发环境" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/01/cjor24cga000qw9tcekcy9re9/">window下使用Docker部署前端开发环境</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/01/cjor24cga000qw9tcekcy9re9/" class="archive-article-date">
   	<time datetime="2018-10-01T03:19:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-01</time>
 </a>
         
@@ -177,12 +268,12 @@
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>很早之前就关注过docker，看过有关的资料，但是那时候docker并不支持window，使用需要使用 <code>docker toolbox</code> 采用<code>VirtualBox</code>虚拟机的方式来安装，觉得很麻烦，就一直没有尝试。 </p>
 <p>最近无意中发现<code>docker for window</code>发布了，可以在win10上使用，趁着最近不忙，倒腾一下。<br>
         
-          <a class="article-more-a" href="/2018/10/01/cjmr7kjt7000aaktc0xdieewq/#more">more >></a>
+          <a class="article-more-a" href="/2018/10/01/cjor24cga000qw9tcekcy9re9/#more">more >></a>
         
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -216,7 +307,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/01/cjmr7kjt7000aaktc0xdieewq/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/10/01/cjor24cga000qw9tcekcy9re9/">展开全文 >></a>
         </p>
       
 
@@ -246,19 +337,19 @@
 
 
   
-    <article id="post-mongodb-auth" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-mongodb-auth" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/11/cjmr7kjt40008aktc1y9lgdfj/">mongoDB 用户权限控制</a>
+      <a class="article-title" href="/2016/12/11/cjor24cg4000gw9tc4nkmjo22/">mongoDB 用户权限控制</a>
     </h1>
   
 
         
-        <a href="/2016/12/11/cjmr7kjt40008aktc1y9lgdfj/" class="archive-article-date">
+        <a href="/2016/12/11/cjor24cg4000gw9tc4nkmjo22/" class="archive-article-date">
   	<time datetime="2016-12-11T04:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-11</time>
 </a>
         
@@ -266,13 +357,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近打算把 <a href="https://github.com/k-dylan/easyclub/">EasyClub</a> 部署到vps上,由于以前一直都是在本地测试状态下,mongodb连接没有采用auth,为了部署启用auth折腾了大半天,现在记录下操作步骤.</p>
+        <p>最近打算把 <a href="https://github.com/k-dylan/easyclub/" target="_blank" rel="noopener">EasyClub</a> 部署到vps上,由于以前一直都是在本地测试状态下,mongodb连接没有采用auth,为了部署启用auth折腾了大半天,现在记录下操作步骤.</p>
 <ol>
 <li>首先不加<code>-auth</code>参数,启动 mongoDB:</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod <span class="_">-f</span> ~/.mongodb.conf</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod -f ~/.mongodb.conf</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2016/12/11/cjmr7kjt40008aktc1y9lgdfj/#more">more >></a>
+          <a class="article-more-a" href="/2016/12/11/cjor24cg4000gw9tc4nkmjo22/#more">more >></a>
         
       
 
@@ -307,7 +398,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/11/cjmr7kjt40008aktc1y9lgdfj/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/11/cjor24cg4000gw9tc4nkmjo22/">展开全文 >></a>
         </p>
       
 
@@ -337,19 +428,19 @@
 
 
   
-    <article id="post-guthubPagebinddomain" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-guthubPagebinddomain" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/cjmr7kjt20005aktcwa23rgy3/">为github Pages绑定顶级域名</a>
+      <a class="article-title" href="/2016/11/16/cjor24cfx0006w9tcw8v5hyqz/">为github Pages绑定顶级域名</a>
     </h1>
   
 
         
-        <a href="/2016/11/16/cjmr7kjt20005aktcwa23rgy3/" class="archive-article-date">
+        <a href="/2016/11/16/cjor24cfx0006w9tcw8v5hyqz/" class="archive-article-date">
   	<time datetime="2016-11-15T16:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
 </a>
         
@@ -359,13 +450,13 @@
       
         <p>今天把自己新买的域名 <code>kdylan.me</code> 与Github Pages进行了绑定，以后就可以通过 <a href="http://kdylan.me/">kdylan.me</a> 来访问博客啦！下面记录一下绑定的过程</p>
 <ol>
-<li>创建<code>CNAME</code>文件<br>在网站项目repo的根目录添加<code>CNAME</code>文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kdylan.<span class="keyword">me</span></div></pre></td></tr></table></figure>
+<li>创建<code>CNAME</code>文件<br>在网站项目repo的根目录添加<code>CNAME</code>文件，注意必须是大写，不要扩展名。然后在里面写上网址，也不需要http以及www；<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kdylan.<span class="keyword">me</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <blockquote>
 <p>由于是本站是采用 <code>hexo</code> 搭建而成，如果直接在github网页中添加此文件，那么下次<code>hexo g -d</code>的时候就会删除此文件，所以要把该文件创建到项目的<code>source</code>文件夹根目录，那么下次<code>hexo g -d</code>的时候，就会把该文件也生成到<code>repo</code>中；</p>
 </blockquote>
-<ol>
+<ol start="2">
 <li>添加域名解析 </li>
 </ol>
 <ul>
@@ -407,7 +498,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/16/cjmr7kjt20005aktcwa23rgy3/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/16/cjor24cfx0006w9tcw8v5hyqz/">展开全文 >></a>
         </p>
       
 
@@ -437,19 +528,19 @@
 
 
   
-    <article id="post-subfolder-githubPages" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-subfolder-githubPages" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/19/cjmr7kjt50009aktca7pusdjg/">将项目web目录部署到gh-pages分支</a>
+      <a class="article-title" href="/2016/10/19/cjor24cg7000lw9tct4gupsz4/">将项目web目录部署到gh-pages分支</a>
     </h1>
   
 
         
-        <a href="/2016/10/19/cjmr7kjt50009aktca7pusdjg/" class="archive-article-date">
+        <a href="/2016/10/19/cjor24cg7000lw9tct4gupsz4/" class="archive-article-date">
   	<time datetime="2016-10-19T05:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-19</time>
 </a>
         
@@ -460,12 +551,12 @@
         <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>在写icon-css项目的时候，需要部署一个预览页面，一般情况下可以采用github的<code>gh-pages</code>分支制作GitHub Pages，但是同一个项目里面既有源代码又预览页面文件，并不希望将源代码也添加到<code>gh-pages</code>分支中。这时就可以使用<code>git subtree</code> 功能</p>
 <h2 id="什么是-git-subtree"><a href="#什么是-git-subtree" class="headerlink" title="什么是 git subtree"></a>什么是 git subtree</h2><p><code>git subtree</code> 是一条git子命令，可以在多个git项目之间双向同步子项目，简单的说就是：可以在一个项目中引用另外一个项目仓库中的代码<br>
         
-          <a class="article-more-a" href="/2016/10/19/cjmr7kjt50009aktca7pusdjg/#more">more >></a>
+          <a class="article-more-a" href="/2016/10/19/cjor24cg7000lw9tct4gupsz4/#more">more >></a>
         
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -495,7 +586,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/19/cjmr7kjt50009aktca7pusdjg/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/10/19/cjor24cg7000lw9tct4gupsz4/">展开全文 >></a>
         </p>
       
 
@@ -525,19 +616,19 @@
 
 
   
-    <article id="post-hash-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hash-router" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/21/cjmr7kjt20004aktc5vbvpd3t/">基于hash和pushState的网页前端路由实现</a>
+      <a class="article-title" href="/2016/05/21/cjor24cfz0009w9tcw43rw676/">基于hash和pushState的网页前端路由实现</a>
     </h1>
   
 
         
-        <a href="/2016/05/21/cjmr7kjt20004aktc5vbvpd3t/" class="archive-article-date">
+        <a href="/2016/05/21/cjor24cfz0009w9tcw43rw676/" class="archive-article-date">
   	<time datetime="2016-05-21T12:58:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-21</time>
 </a>
         
@@ -547,15 +638,15 @@
       
         <p>现在单页面应用是越来越流行了，而路由则是这种程序的基础，比如<code>vue-router</code>、<code>angular-router</code>等路由组件，今天我们来实现一个简单的路由类。</p>
 <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
-<li>支持hashURL，例如：<a href="http://test.com#/path">http://test.com#/path</a>    </li>
+<li>支持hashURL，例如：<a href="http://test.com#/path" target="_blank" rel="noopener">http://test.com#/path</a>    </li>
 <li>兼容History Api
         
-          <a class="article-more-a" href="/2016/05/21/cjmr7kjt20004aktc5vbvpd3t/#more">more >></a>
+          <a class="article-more-a" href="/2016/05/21/cjor24cfz0009w9tcw43rw676/#more">more >></a>
         
       
 
       
-    </div>
+    </li></ul></div>
     <div class="article-info article-info-index">
       
       
@@ -589,7 +680,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/05/21/cjmr7kjt20004aktc5vbvpd3t/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/05/21/cjor24cfz0009w9tcw43rw676/">展开全文 >></a>
         </p>
       
 
@@ -619,19 +710,19 @@
 
 
   
-    <article id="post-get-hidden-node-height" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-get-hidden-node-height" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/02/cjmr7kjt10003aktciyuzg992/">js获取隐藏元素的实际宽和高</a>
+      <a class="article-title" href="/2016/05/02/cjor24cfw0005w9tc2gz7sdiw/">js获取隐藏元素的实际宽和高</a>
     </h1>
   
 
         
-        <a href="/2016/05/02/cjmr7kjt10003aktciyuzg992/" class="archive-article-date">
+        <a href="/2016/05/02/cjor24cfw0005w9tc2gz7sdiw/" class="archive-article-date">
   	<time datetime="2016-05-02T04:51:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-02</time>
 </a>
         
@@ -639,16 +730,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我们通常都是使用 <code>Element.offsetHeight</code> 来获取一个节点的宽和高度的，在一般的使用中是没什么问题的。但是，如果节点的 <code>display</code> 属性为 <code>none</code>话，就获取不到实际的宽高了，获取到的数据就是0；<br><iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/xyy7c7am/embedded/result,html,css,js/light" frameborder="0" allowfullscreen></iframe></p>
+        <p>我们通常都是使用 <code>Element.offsetHeight</code> 来获取一个节点的宽和高度的，在一般的使用中是没什么问题的。但是，如果节点的 <code>display</code> 属性为 <code>none</code>话，就获取不到实际的宽高了，获取到的数据就是0；<br><iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/xyy7c7am/embedded/result,html,css,js/light" frameborder="0" allowfullscreen></iframe></p>
 <blockquote>
 <p>那如何才能获取到实际的宽高呢？<br>
         
-          <a class="article-more-a" href="/2016/05/02/cjmr7kjt10003aktciyuzg992/#more">more >></a>
+          <a class="article-more-a" href="/2016/05/02/cjor24cfw0005w9tc2gz7sdiw/#more">more >></a>
         
       
 
       
-    </div>
+    </p></blockquote></div>
     <div class="article-info article-info-index">
       
       
@@ -682,7 +773,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/05/02/cjmr7kjt10003aktciyuzg992/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/05/02/cjor24cfw0005w9tc2gz7sdiw/">展开全文 >></a>
         </p>
       
 
@@ -712,19 +803,19 @@
 
 
   
-    <article id="post-css-transition-auto" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-css-transition-auto" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/01/cjmr7kjsz0001aktcawxx8llt/">CSS3中使用transition过渡动画高度自适应的问题</a>
+      <a class="article-title" href="/2016/05/01/cjor24cfq0001w9tci0gqtbzk/">CSS3中使用transition过渡动画高度自适应的问题</a>
     </h1>
   
 
         
-        <a href="/2016/05/01/cjmr7kjsz0001aktcawxx8llt/" class="archive-article-date">
+        <a href="/2016/05/01/cjor24cfq0001w9tci0gqtbzk/" class="archive-article-date">
   	<time datetime="2016-05-01T03:19:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-01</time>
 </a>
         
@@ -734,12 +825,12 @@
       
         <p>最近在做一个项目的时候，需要为一个列表添加个slideDown的动画，容器的高度是不确定的，如果用jquery实现的话很简单：<br>
         
-          <a class="article-more-a" href="/2016/05/01/cjmr7kjsz0001aktcawxx8llt/#more">more >></a>
+          <a class="article-more-a" href="/2016/05/01/cjor24cfq0001w9tci0gqtbzk/#more">more >></a>
         
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -773,7 +864,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/05/01/cjmr7kjsz0001aktcawxx8llt/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/05/01/cjor24cfq0001w9tci0gqtbzk/">展开全文 >></a>
         </p>
       
 
@@ -803,19 +894,19 @@
 
 
   
-    <article id="post-hexo-deploy-low-dir" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo-deploy-low-dir" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/19/cjmr7kjt30006aktc8m8mdyzx/">Hexo部署到Github上文件夹的大小写问题</a>
+      <a class="article-title" href="/2016/02/19/cjor24cg0000aw9tc8k2n2b0n/">Hexo部署到Github上文件夹的大小写问题</a>
     </h1>
   
 
         
-        <a href="/2016/02/19/cjmr7kjt30006aktc8m8mdyzx/" class="archive-article-date">
+        <a href="/2016/02/19/cjor24cg0000aw9tc8k2n2b0n/" class="archive-article-date">
   	<time datetime="2016-02-19T15:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-19</time>
 </a>
         
@@ -833,7 +924,7 @@
 <li>打开github查看，问题解决！</li>
 </ol>
 <blockquote>
-<p>可以使用下面语句设置git大小写敏感，防止下次出现这样的问题：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config core.ignorecase <span class="literal">false</span></div></pre></td></tr></table></figure></p>
+<p>可以使用下面语句设置git大小写敏感，防止下次出现这样的问题：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 
       
@@ -869,7 +960,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/19/cjmr7kjt30006aktc8m8mdyzx/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/02/19/cjor24cg0000aw9tc8k2n2b0n/">展开全文 >></a>
         </p>
       
 
@@ -899,19 +990,19 @@
 
 
   
-    <article id="post-express-ejs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-express-ejs" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/17/cjmr7kjt00002aktc8acl25jr/">express中使用ejs</a>
+      <a class="article-title" href="/2016/02/17/cjor24cfu0004w9tc3wwn07so/">express中使用ejs</a>
     </h1>
   
 
         
-        <a href="/2016/02/17/cjmr7kjt00002aktc8acl25jr/" class="archive-article-date">
+        <a href="/2016/02/17/cjor24cfu0004w9tc3wwn07so/" class="archive-article-date">
   	<time datetime="2016-02-16T16:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-17</time>
 </a>
         
@@ -919,12 +1010,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、使用express命令初始化项目"><a href="#1、使用express命令初始化项目" class="headerlink" title="1、使用express命令初始化项目"></a>1、使用express命令初始化项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]</div></pre></td></tr></table></figure>
+        <h3 id="1、使用express命令初始化项目"><a href="#1、使用express命令初始化项目" class="headerlink" title="1、使用express命令初始化项目"></a>1、使用express命令初始化项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]</span><br></pre></td></tr></table></figure>
 <h3 id="2、启用ejs的layout模板"><a href="#2、启用ejs的layout模板" class="headerlink" title="2、启用ejs的layout模板"></a>2、启用ejs的layout模板</h3><p>express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件</p>
 <h4 id="安装express-partials"><a href="#安装express-partials" class="headerlink" title="安装express-partials"></a>安装express-partials</h4><p>在package.json里面的dependencies中添加 <code>&quot;express-partials&quot; : &quot;*&quot;</code> 。然后再项目目录下运行<code>npm install</code></p>
-<h4 id="在项目中引用express-partials"><a href="#在项目中引用express-partials" class="headerlink" title="在项目中引用express-partials"></a>在项目中引用express-partials</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> partials = <span class="built_in">require</span>(<span class="string">'express-partials'</span>);</div><div class="line"><span class="comment">//在app.set('view engine', 'ejs'); 下面添加</span></div><div class="line">app.use(partials());</div></pre></td></tr></table></figure>
+<h4 id="在项目中引用express-partials"><a href="#在项目中引用express-partials" class="headerlink" title="在项目中引用express-partials"></a>在项目中引用express-partials</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> partials = <span class="built_in">require</span>(<span class="string">'express-partials'</span>);</span><br><span class="line"><span class="comment">//在app.set('view engine', 'ejs'); 下面添加</span></span><br><span class="line">app.use(partials());</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2016/02/17/cjmr7kjt00002aktc8acl25jr/#more">more >></a>
+          <a class="article-more-a" href="/2016/02/17/cjor24cfu0004w9tc3wwn07so/#more">more >></a>
         
       
 
@@ -959,111 +1050,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/17/cjmr7kjt00002aktc8acl25jr/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mac+apache+php" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/15/cjmr7kjt40007aktc07uamucc/">Mac下Apache和php的配置</a>
-    </h1>
-  
-
-        
-        <a href="/2016/02/15/cjmr7kjt40007aktc07uamucc/" class="archive-article-date">
-  	<time datetime="2016-02-15T03:19:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>osX系统是默认自带的有php和apache的 </p>
-</blockquote>
-<h2 id="1、启动Apache"><a href="#1、启动Apache" class="headerlink" title="1、启动Apache"></a>1、启动Apache</h2><p>打开终端：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">开启apache命令：sudo apachectl start</div><div class="line">关闭apache命令：sudo apachectl stop</div><div class="line">重启apache命令：sudo apachectl restart</div></pre></td></tr></table></figure>
-<p>启用apache后，可以直接在浏览器访问<code>http://localhost</code>，出现“<code>It works！</code>”表示运行正常。</p>
-<ol>
-<li><p>用户级的根目录是：<code>~Sites</code>，也就是站点目录。在 OS X Mountain Lion 中，这个目录可能没有，所以你需要手动建立一个同名目录。建立方式很简单，直接在终端中运行：<code>sudo mkdir Sites</code></p>
-</li>
-<li><p>建立”站点”文件夹之后，检查下面这个文件夹下面是不是有”<code>你的用户名.conf</code>”这个文件。</p>
-</li>
-</ol>
-<p>如果没有，那么你需要创建一个，取名为“<code>dylan.conf</code>”，可以使用 vi 或者 nano 这两种编辑器之一来创建。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apache2/users/haibor.conf</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2016/02/15/cjmr7kjt40007aktc07uamucc/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mac</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PHP//" class="article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/15/cjmr7kjt40007aktc07uamucc/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/02/17/cjor24cfu0004w9tc3wwn07so/">展开全文 >></a>
         </p>
       
 
@@ -1239,13 +1226,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue源码解析</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
