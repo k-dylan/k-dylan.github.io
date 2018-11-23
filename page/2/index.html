@@ -155,6 +155,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-express-ejs" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/17/cjor24cfu0004w9tc3wwn07so/">express中使用ejs</a>
+    </h1>
+  
+
+        
+        <a href="/2016/02/17/cjor24cfu0004w9tc3wwn07so/" class="archive-article-date">
+  	<time datetime="2016-02-16T16:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、使用express命令初始化项目"><a href="#1、使用express命令初始化项目" class="headerlink" title="1、使用express命令初始化项目"></a>1、使用express命令初始化项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ express -e ejs [后面可以添加项目名称，添加的话 会创建项目文件夹，不添加就在当前文件夹内]</span><br></pre></td></tr></table></figure>
+<h3 id="2、启用ejs的layout模板"><a href="#2、启用ejs的layout模板" class="headerlink" title="2、启用ejs的layout模板"></a>2、启用ejs的layout模板</h3><p>express3以上默认把layout给去掉了，所以现在文件夹下没有layout.ejs文件</p>
+<h4 id="安装express-partials"><a href="#安装express-partials" class="headerlink" title="安装express-partials"></a>安装express-partials</h4><p>在package.json里面的dependencies中添加 <code>&quot;express-partials&quot; : &quot;*&quot;</code> 。然后再项目目录下运行<code>npm install</code></p>
+<h4 id="在项目中引用express-partials"><a href="#在项目中引用express-partials" class="headerlink" title="在项目中引用express-partials"></a>在项目中引用express-partials</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> partials = <span class="built_in">require</span>(<span class="string">'express-partials'</span>);</span><br><span class="line"><span class="comment">//在app.set('view engine', 'ejs'); 下面添加</span></span><br><span class="line">app.use(partials());</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2016/02/17/cjor24cfu0004w9tc3wwn07so/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Node//" class="article-tag-list-link color5">Node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/02/17/cjor24cfu0004w9tc3wwn07so/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-mac+apache+php" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
